@@ -1,0 +1,11 @@
+/*Formatação das imgs*/
+.logo {
+    width: 300px;
+    height: 100px;
+}
+.userimg{
+    width: 40px;
+    height: 40px;
+    background-color: gray;
+    border-radius: 30px;
+}
