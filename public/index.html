@@ -17,18 +17,18 @@
 </head>
 
 <body>
-    <header class="container-fluid">
-        <div class="row">
+    <header class="d-flex justify-content-between bg-secondary">
+        
             <img src="imgs/logo.png" alt="Logo-netflixo" class="logo">
             <nav class="search-bar">
                 <input type="text" name="" id="search-input" class="search-input" placeholder="Search...">
                 <button id="btsearch" class="btsearch"><i class="bi bi-search"></i></button>
-                <div class="filter-dropdown">
-                    <button id="btfilter" class="btsearch">
+                <div class="div-filter">
+                    <button id="btfilter" class="btfilter">
                         <i class="bi bi-funnel"></i>
                         <i class="bi bi-funnel-fill"></i>
                     </button>
-                    <div class="dropdown">
+                    <div id="filter-dropdown" class="dropdown">
                         <ul>
                             <li><input type="checkbox" id="input-acao"><label for="input-acao">Ação</label></li>
                             <li><input type="checkbox" id="input-aventura"><label for="input-aventura">Aventura</label>
@@ -64,7 +64,7 @@
 
             </div> <!--Fim user-info-->
 
-        </div> <!--Fim row-->
+        
     </header>
     <main>
         <section class="destaques">
