@@ -377,7 +377,334 @@ const dados = [
         "data": "2024-07-25",
         "trailer": "https://www.youtube.com/watch?v=73_1biulkYk",
         "avaliacao": 4.8
-    }
+    },
+    {
+        "id": 14,
+        "titulo": "Arcane",
+        "class": "serie",
+        "imgPrinciapl": "imgs/filmes/banners/arcane.jpg",
+        "episodios": [
+            {
+                "id": 1,
+                "titulo": "Bem-vindos a Piltover",
+                "src": "imgs/filmes/arcane/arcaneEp1.jpg",
+                "sinopse": "Em meio à tensão entre as cidades de Piltover e Zaun, duas irmãs acabam separadas durante um conflito que mudará suas vidas para sempre."
+            },
+            {
+                "id": 2,
+                "titulo": "Alguns Mistérios Devem Permanecer",
+                "src": "imgs/filmes/arcane/arcaneEp2.jpg",
+                "sinopse": "Jayce e Viktor exploram uma nova forma de ciência que pode mudar o mundo. Enquanto isso, a tensão nas ruas aumenta."
+            },
+            {
+                "id": 3,
+                "titulo": "A Base da Irmandade",
+                "src": "imgs/filmes/arcane/arcaneEp3.jpg",
+                "sinopse": "Com Piltover em alerta, os laços familiares são testados, e decisões difíceis levam a consequências devastadoras."
+            },
+            {
+                "id": 4,
+                "titulo": "Velhos Ferimentos",
+                "src": "imgs/filmes/arcane/arcaneEp4.jpg",
+                "sinopse": "Anos depois, Jinx emerge em Zaun como uma figura caótica, enquanto Vi busca redenção e respostas no submundo."
+            },
+            {
+                "id": 5,
+                "titulo": "Todos os Caminhos Levam ao Desastre",
+                "src": "imgs/filmes/arcane/arcaneEp5.jpg",
+                "sinopse": "Piltover debate a legalização da Hextech, e Jinx intensifica o conflito entre as duas cidades com um ataque ousado."
+            },
+            {
+                "id": 6,
+                "titulo": "Quando Você Sangra",
+                "src": "imgs/filmes/arcane/arcaneEp6.jpg",
+                "sinopse": "O passado e o presente colidem quando Vi reencontra Jinx. Jayce enfrenta dilemas morais sobre a tecnologia que criou."
+            },
+            {
+                "id": 7,
+                "titulo": "O Garoto Ideal",
+                "src": "imgs/filmes/arcane/arcaneEp7.jpg",
+                "sinopse": "Jayce e Viktor enfrentam divergências enquanto Vi e Caitlyn buscam alianças em Zaun para impedir os planos de Silco."
+            },
+            {
+                "id": 8,
+                "titulo": "A Água e o Óleo",
+                "src": "imgs/filmes/arcane/arcaneEp8.jpg",
+                "sinopse": "Conflitos internos e revelações fazem com que Vi e Jinx repensem suas jornadas. A tensão entre as cidades atinge o auge."
+            },
+            {
+                "id": 9,
+                "titulo": "O Monstro Que Você Criou",
+                "src": "imgs/filmes/arcane/arcaneEp9.jpg",
+                "sinopse": "O destino de Piltover e Zaun é decidido em uma explosiva conclusão, onde amor, ódio e sacrifícios se entrelaçam."
+            }
+        ],
+        "sinopse": "Em meio a uma revolução tecnológica e conflitos sociais, duas irmãs acabam em lados opostos de uma guerra entre as cidades-estado de Piltover e Zaun. Inspirada no universo de League of Legends.",
+        "categoria": ["Animação", "Ação", "Drama", "Fantasia", "Ficção Científica"],
+        "diretor": "Pascal Charrue, Arnaud Delord",
+        "data": "6 de novembro de 2021",
+        "trailer": "https://www.youtube.com/watch?v=IA-v_LB3Qpc",
+        "avaliacao": 4.6
+    },
+    {
+        "id": 15,
+        "titulo": "Jujutsu Kaisen",
+        "class": "serie",
+        "imgPrinciapl": "imgs/filmes/banners/jujutsu.jpg",
+        "episodios": [
+          {
+            "id": 1,
+            "titulo": "Ryomen Sukuna",
+            "src": "imgs/filmes/jujutsu/jujutsuEp1.jpg",
+            "sinopse": "Yuji Itadori ingere uma maldição poderosa para salvar seus amigos, iniciando sua jornada no mundo das artes jujutsu."
+          },
+          {
+            "id": 2,
+            "titulo": "For the Sake of the Students",
+            "src": "imgs/filmes/jujutsu/jujutsuEp2.jpg",
+            "sinopse": "Yuji começa seu treinamento na Escola Técnica de Jujutsu, aprendendo sobre as maldições e suas habilidades."
+          },
+          {
+            "id": 3,
+            "titulo": "Cursed Womb Must Die",
+            "src": "imgs/filmes/jujutsu/jujutsuEp3.jpg",
+            "sinopse": "Yuji e seus colegas enfrentam uma maldição poderosa em uma missão de campo."
+          },
+          {
+            "id": 4,
+            "titulo": "Curse Womb Must Die -II-",
+            "src": "imgs/filmes/jujutsu/jujutsuEp4.jpg",
+            "sinopse": "A batalha contra a maldição continua, testando as habilidades de Yuji e seus amigos."
+          },
+          {
+            "id": 5,
+            "titulo": "The King of Curses",
+            "src": "imgs/filmes/jujutsu/jujutsuEp5.jpg",
+            "sinopse": "A missão se intensifica quando Yuji e os outros enfrentam o poder das maldições mais fortes."
+          },
+          {
+            "id": 6,
+            "titulo": "After the Rain",
+            "src": "imgs/filmes/jujutsu/jujutsuEp6.jpg",
+            "sinopse": "Yuji continua seu treinamento enquanto o mistério das maldições se aprofunda, colocando-o em situações ainda mais perigosas."
+          },
+          {
+            "id": 7,
+            "titulo": "Assault",
+            "src": "imgs/filmes/jujutsu/jujutsuEp7.jpg",
+            "sinopse": "A tensão aumenta quando uma maldição do passado retorna com um ataque mortal."
+          },
+          {
+            "id": 8,
+            "titulo": "Bitter Sweet",
+            "src": "imgs/filmes/jujutsu/jujutsuEp8.jpg",
+            "sinopse": "Os laços entre os protagonistas ficam mais fortes enquanto enfrentam desafios cada vez mais difíceis."
+          },
+          {
+            "id": 9,
+            "titulo": "The Origin of the Curse",
+            "src": "imgs/filmes/jujutsu/jujutsuEp9.jpg",
+            "sinopse": "A origem da maldição que ameaça o mundo é revelada, mudando o curso da história."
+          },
+          {
+            "id": 10,
+            "titulo": "Shibuya Incident",
+            "src": "imgs/filmes/jujutsu/jujutsuEp10.jpg",
+            "sinopse": "O cenário da batalha se muda para Shibuya, onde forças inesperadas entram em ação."
+          },
+          {
+            "id": 11,
+            "titulo": "Cursed Energy",
+            "src": "imgs/filmes/jujutsu/jujutsuEp11.jpg",
+            "sinopse": "A luta contra as maldições chega a um novo nível com um foco intensificado em energia amaldiçoada."
+          },
+          {
+            "id": 12,
+            "titulo": "End of the Line",
+            "src": "imgs/filmes/jujutsu/jujutsuEp12.jpg",
+            "sinopse": "Os personagens enfrentam suas escolhas e os sacrifícios necessários enquanto a batalha final se aproxima."
+          }
+        ],
+        "sinopse": "Yuji Itadori, um estudante do ensino médio com habilidades físicas excepcionais, se envolve no mundo das maldições após ingerir um objeto amaldiçoado para salvar seus amigos.",
+        "categoria": ["Ação", "Aventura", "Fantasia", "Luta", "Sobrenatural"],
+        "diretor": "Sunghoo Park",
+        "data": "2020",
+        "trailer": "https://www.youtube.com/watch?v=TVHsknG-1uE",
+        "avaliacao": 4.4
+      },
+      {
+        "id": 16,
+        "titulo": "Attack on Titan",
+        "class": "serie",
+        "imgPrinciapl": "imgs/filmes/banners/aot.jpg",
+        "episodios": [
+          {
+            "id": 1,
+            "titulo": "To You, in 2000 Years: The Fall of Shiganshina, Part 1",
+            "src": "imgs/filmes/aot/aotEp1.jpg",
+            "sinopse": "A cidade de Shiganshina é atacada por gigantes, forçando Eren e seus amigos a se alistarem no exército."
+          },
+          {
+            "id": 2,
+            "titulo": "That Day: The Fall of Shiganshina, Part 2",
+            "src": "imgs/filmes/aot/aotEp2.jpg",
+            "sinopse": "A batalha contra os titãs continua enquanto Eren testemunha a destruição de sua cidade."
+          },
+          {
+            "id": 3,
+            "titulo": "A Dim Light Amid Despair: Humanity's Comeback, Part 1",
+            "src": "imgs/filmes/aot/aotEp3.jpg",
+            "sinopse": "Os recrutas iniciam seu treinamento para enfrentar os titãs e proteger a humanidade."
+          },
+          {
+            "id": 4,
+            "titulo": "The Night of the Closing Ceremony: Humanity's Comeback, Part 2",
+            "src": "imgs/filmes/aot/aotEp4.jpg",
+            "sinopse": "Os recrutas enfrentam desafios durante o treinamento, testando sua determinação."
+          },
+          {
+            "id": 5,
+            "titulo": "First Battle: The Struggle for Trost, Part 1",
+            "src": "imgs/filmes/aot/aotEp5.jpg",
+            "sinopse": "A cidade de Trost é atacada por titãs, e os recrutas são enviados para defendê-la."
+          },
+          {
+            "id": 6,
+            "titulo": "The World the Girl Saw: The Struggle for Trost, Part 2",
+            "src": "imgs/filmes/aot/aotEp6.jpg",
+            "sinopse": "Os recrutas enfrentam titãs em combate direto, colocando suas habilidades à prova."
+          },
+          {
+            "id": 7,
+            "titulo": "Small Blade: The Struggle for Trost, Part 3",
+            "src": "imgs/filmes/aot/aotEp7.jpg",
+            "sinopse": "A batalha em Trost continua, com os recrutas enfrentando desafios cada vez maiores."
+          },
+          {
+            "id": 8,
+            "titulo": "I Can Hear His Heartbeat: The Struggle for Trost, Part 4",
+            "src": "imgs/filmes/aot/aotEp8.jpg",
+            "sinopse": "A luta contra os titãs em Trost chega a um ponto crítico, testando a resistência dos recrutas."
+          },
+          {
+            "id": 9,
+            "titulo": "Whereabouts of His Left Arm: The Struggle for Trost, Part 5",
+            "src": "imgs/filmes/aot/aotEp9.jpg",
+            "sinopse": "Os recrutas enfrentam perdas e desafios enquanto continuam a defesa de Trost."
+          },
+          {
+            "id": 10,
+            "titulo": "Response: The Struggle for Trost, Part 6",
+            "src": "imgs/filmes/aot/aotEp10.jpg",
+            "sinopse": "A batalha em Trost chega a um novo nível de intensidade, com os recrutas lutando por suas vidas."
+          },
+          {
+            "id": 11,
+            "titulo": "Idol: The Struggle for Trost, Part 7",
+            "src": "imgs/filmes/aot/aotEp11.jpg",
+            "sinopse": "Os recrutas enfrentam desafios pessoais enquanto continuam a luta contra os titãs."
+          },
+          {
+            "id": 12,
+            "titulo": "Wound: The Struggle for Trost, Part 8",
+            "src": "imgs/filmes/aot/aotEp12.jpg",
+            "sinopse": "A batalha em Trost chega a um ponto decisivo, com os recrutas enfrentando seus maiores desafios."
+          }
+        ],
+        "sinopse": "Em um mundo onde a humanidade vive cercada por muralhas para se proteger dos titãs, Eren Yeager e seus amigos se alistam no Exército após um ataque devastador que destrói sua cidade natal.",
+        "categoria": ["Ação", "Drama", "Fantasia", "Mistério", "Suspense"],
+        "diretor": "Tetsurō Araki",
+        "data": "2013",
+        "trailer": "https://www.youtube.com/watch?v=1pK6Vg5K1wY",
+        "avaliacao": 8.8
+      },
+      {
+        "id": 17,
+        "titulo": "Frieren: Beyond Journey's End",
+        "class": "serie",
+        "imgPrinciapl": "imgs/filmes/banners/frieren.jpg",
+        "episodios": [
+          {
+            "id": 1,
+            "titulo": "The Beginning of the Journey",
+            "src": "imgs/filmes/frieren/frierenEp1.jpg",
+            "sinopse": "Após a conclusão de uma longa jornada, Frieren, uma elfa imortal, reflete sobre sua vida e começa uma nova aventura em busca de autoconhecimento."
+          },
+          {
+            "id": 2,
+            "titulo": "The Passing of Time",
+            "src": "imgs/filmes/frieren/frierenEp2.jpg",
+            "sinopse": "Frieren começa a lidar com a diferença de tempo entre ela e seus companheiros humanos, enquanto encara os desafios de sua própria existência."
+          },
+          {
+            "id": 3,
+            "titulo": "Memories of the Past",
+            "src": "imgs/filmes/frieren/frierenEp3.jpg",
+            "sinopse": "Enquanto viaja pelo mundo, Frieren começa a reviver lembranças de sua jornada com o herói Himmel e outros antigos companheiros."
+          },
+          {
+            "id": 4,
+            "titulo": "The Search for a Successor",
+            "src": "imgs/filmes/frieren/frierenEp4.jpg",
+            "sinopse": "Frieren procura um sucessor para continuar sua missão, ao mesmo tempo em que reflete sobre as relações que construiu ao longo do tempo."
+          },
+          {
+            "id": 5,
+            "titulo": "The Weight of Time",
+            "src": "imgs/filmes/frieren/frierenEp5.jpg",
+            "sinopse": "Conforme o tempo avança, Frieren começa a enfrentar as consequências de sua imortalidade e o impacto que isso tem nas pessoas ao seu redor."
+          },
+          {
+            "id": 6,
+            "titulo": "Lessons in Magic",
+            "src": "imgs/filmes/frieren/frierenEp6.jpg",
+            "sinopse": "Frieren começa a ensinar magia a novos discípulos, mas logo percebe que o entendimento dos humanos sobre magia é muito limitado em comparação com seu vasto conhecimento."
+          },
+          {
+            "id": 7,
+            "titulo": "The Bonds We Forge",
+            "src": "imgs/filmes/frieren/frierenEp7.jpg",
+            "sinopse": "Enquanto cria laços com novos aliados, Frieren aprende sobre os desafios da vida cotidiana e a importância de viver no presente."
+          },
+          {
+            "id": 8,
+            "titulo": "The Journey Forward",
+            "src": "imgs/filmes/frieren/frierenEp8.jpg",
+            "sinopse": "Frieren continua sua jornada para entender a verdadeira essência de sua vida e o impacto que ela tem nas pessoas ao seu redor."
+          },
+          {
+            "id": 9,
+            "titulo": "A Glimpse of Eternity",
+            "src": "imgs/filmes/frieren/frierenEp9.jpg",
+            "sinopse": "A imortalidade de Frieren continua a ser um fardo, enquanto ela reflete sobre sua vida eterna e os amigos que perdeu ao longo do tempo."
+          },
+          {
+            "id": 10,
+            "titulo": "The Heart of the Elf",
+            "src": "imgs/filmes/frieren/frierenEp10.jpg",
+            "sinopse": "A natureza do coração de Frieren é questionada enquanto ela confronta o vazio existencial de ser uma elfa imortal."
+          },
+          {
+            "id": 11,
+            "titulo": "Echoes of the Past",
+            "src": "imgs/filmes/frieren/frierenEp11.jpg",
+            "sinopse": "Memórias de velhos amigos ressurgem, forçando Frieren a enfrentar o passado e os sentimentos que ela guardou por tanto tempo."
+          },
+          {
+            "id": 12,
+            "titulo": "The End of the Journey",
+            "src": "imgs/filmes/frieren/frierenEp12.jpg",
+            "sinopse": "Frieren finalmente encontra um fechamento em sua jornada, compreendendo o significado da vida e a importância dos momentos que compartilhou com os outros."
+          }
+        ],
+        "sinopse": "Após a morte de seu companheiro herói, Frieren, uma elfa imortal, começa uma jornada solo para entender o valor da vida e os laços que formou ao longo do tempo.",
+        "categoria": ["Ação", "Aventura", "Fantasia", "Drama", "Sobrenatural"],
+        "diretor": "Masato Jinbo",
+        "data": "2023",
+        "trailer": "https://www.youtube.com/watch?v=mh5jx3D7S5M",
+        "avaliacao": 4.2
+      }
+    
 ];
 
 
