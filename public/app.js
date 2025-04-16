@@ -1,7 +1,18 @@
-
+let logged = true;
 
 
 document.addEventListener('DOMContentLoaded', ()=>{
+    let divDeslogado = document.querySelector('div.not-logged');
+    let divLogado = document.querySelector('div.logged');
+    if(logged){
+        divDeslogado.style.display = 'none';
+        divLogado.style.display = 'block';
+    }else{
+        divDeslogado.style.display = 'block';
+        divLogado.style.display = 'none';
+    }
+
+
     setupFiltro();
 
 })
