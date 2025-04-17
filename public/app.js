@@ -727,7 +727,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     setupFiltro();
 
-
 })
 
 
@@ -804,6 +803,17 @@ function trocarComponente1por2(comp1, comp2) {
 }
 function random(min, max){
     return Math.floor(Math.random() * (max-min+1)) + min;
+}
+function randomMaisChanceLowHigh(min, max, maisChance){
+    maisChance = maisChance.toUpperCase();
+    if(maisChance !== "LOW" && maisChance !== "HIGH")return null;
+    let rand;
+    if(maisChance === "LOW"){
+        rand = Math.random() ** 2;
+    }else{
+        rand = 1 - ((1 - Math.random()) ** 2);
+    }
+    return Math.floor(rand * (max-min+1)) + min;
 }
 function randomSequence(min, max){
     let sequencia = new Array(max-min + 1).fill(null);
