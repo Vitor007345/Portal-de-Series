@@ -727,6 +727,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     setupFiltro();
 
+
 })
 
 
@@ -800,5 +801,24 @@ function fecharDropdown(dropdown) {
 function trocarComponente1por2(comp1, comp2) {
     comp1.style.display = 'none';
     comp2.style.display = 'inline';
+}
+function random(min, max){
+    return Math.floor(Math.random() * (max-min+1)) + min;
+}
+function randomSequence(min, max){
+    let sequencia = new Array(max-min + 1).fill(null);
+    let numbersToMix = new Array(sequencia.length);
+    for (let i = 0; i < numbersToMix.length; i++){
+        numbersToMix[i] = min + i;
+    }
+   
+    for(let i = 0; i < sequencia.length; i++){
+        let randomIndex = random(0, numbersToMix.length - 1);
+        sequencia[i] = numbersToMix[randomIndex];
+        numbersToMix.splice(randomIndex, 1);
+        
+    }
+    console.log(sequencia);
+    return sequencia;
 }
 
