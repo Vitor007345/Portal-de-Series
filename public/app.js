@@ -726,6 +726,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     setupFiltro();
+    setupDetalhes();
 
 })
 
@@ -786,6 +787,69 @@ function setupFiltro() {
         trocarComponente1por2(filtroPrenchido, filtroVazio);
     }
 }
+function setupDetalhes(){
+    let numDestaques = randomPorDia(3, 6, 0); //um número de destques aleatorio de 3 a 6, diferente a cada dia
+    let divBtCarousel = document.querySelector('.destaques .carousel-indicators');
+    let divCarouselItem = document.querySelector('.destaques .carousel-inner');
+    let sequenciaDetalhes = randomSequencePorDia(1, dados.length, 1).slice(0, numDestaques); //cria uma sequencia com numero de destaques como tamanho, podendo ter número de 1 ao max dos dados, ela é diferente a cada dia
+
+    //seta o primeiro botão e slide como active
+
+    let id = sequenciaDetalhes[0];
+    let info = dados.find((elem)=>elem.id == id);
+
+
+    divBtCarousel.innerHTML = `
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    `;
+
+    divCarouselItem.innerHTML = `
+        <div class="carousel-item active">
+
+            <div class="carousel-img-div">
+                <div class="degrade"></div>
+                <img src="${info.imgPrinciapl}" class="d-block w-100 custom-img-carousel" alt="...">
+            </div>
+                    
+            <div class="carousel-caption d-none d-md-block custom-caption">
+                <h5>${(!info.subtitulo)?info.titulo:info.titulo + "&nbsp;" + info.subtitulo}</h5>
+                <p>${info.sinopse}</p>
+            </div>
+        </div>
+
+    `;
+    
+    //seta o resto normal sem o active
+    
+    for (let i = 1; i < numDestaques; i++){
+        divBtCarousel.innerHTML += `
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="${i}" aria-label="Slide ${i+1}"></button>
+        `;
+
+        id = sequenciaDetalhes[i];
+        info = dados.find((elem)=>elem.id == id);
+
+        divCarouselItem.innerHTML += `
+        <div class="carousel-item">
+
+            <div class="carousel-img-div">
+                <div class="degrade"></div>
+                <img src="${info.imgPrinciapl}" class="d-block w-100 custom-img-carousel" alt="...">
+            </div>
+                    
+            <div class="carousel-caption d-none d-md-block custom-caption">
+                <h5>${(!info.subtitulo)?info.titulo:info.titulo + "&nbsp;" + info.subtitulo}</h5>
+                <p>${info.sinopse}</p>
+            </div>
+        </div>
+
+    `;
+
+
+    }
+
+    
+}
 
 
 //funções reutilizaveis
@@ -801,6 +865,8 @@ function trocarComponente1por2(comp1, comp2) {
     comp1.style.display = 'none';
     comp2.style.display = 'inline';
 }
+
+
 function random(min, max){
     return Math.floor(Math.random() * (max-min+1)) + min;
 }
@@ -828,7 +894,28 @@ function randomSequence(min, max){
         numbersToMix.splice(randomIndex, 1);
         
     }
-    console.log(sequencia);
+    
     return sequencia;
 }
+function randomPorDia(min, max, index){
+    const hoje = new Date();
+    const seed = parseInt(index.toString() + hoje.getFullYear().toString() + (hoje.getMonth() + 1).toString() + hoje.getDate().toString());
+    let rand = Math.abs(Math.sin(seed)); //quase aleatorio de -1 a 1, valores possíveis em um seno, função seno retorna valores caóticos
+    return Math.floor(rand * (max-min+1)) + min;
+}
 
+function randomSequencePorDia(min, max, index){
+    let sequencia = new Array(max-min + 1).fill(null);
+    let numbersToMix = new Array(sequencia.length);
+    for (let i = 0; i < numbersToMix.length; i++){
+        numbersToMix[i] = min + i;
+    }
+   
+    for(let i = 0; i < sequencia.length; i++){
+        let randomIndex = randomPorDia(0, numbersToMix.length - 1, index + i);
+        sequencia[i] = numbersToMix[randomIndex];
+        numbersToMix.splice(randomIndex, 1);
+        
+    }
+    return sequencia;
+}
