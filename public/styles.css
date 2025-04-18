@@ -64,6 +64,7 @@ body{
     color: white;
     border: purple 3px solid;
     width: 50%;
+    z-index: 6;
 }
 .dropdown ul{
     padding: 1rem;
@@ -146,3 +147,102 @@ body{
     
 }
 
+
+/*Formatação da área de filmes*/
+
+.divFrase{
+    color: white;
+}
+
+.filme{
+    position: relative;
+    height: 75vw;
+}
+
+.filmes .divImg{
+    position: absolute;
+    bottom: 0;
+    max-width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.filmes .row{
+    overflow: auto;
+    flex-wrap: nowrap !important;
+}
+
+.filmes .divImg img{
+    width: 95%;
+    height: 100%;
+}
+.filme:hover{
+    cursor: pointer;
+}
+
+@media screen and (min-width:768px) {
+    .filme{
+        height: 50vw;
+    }
+
+    .filme:hover .conteudo{
+        position: relative;
+        z-index: 2;
+        background-color: rgba(41, 41, 41, 0.808);
+        width: 100%;
+        height: 100%;
+        color: white;
+        padding: 1rem;
+    }
+
+    
+
+    .botoes ul{
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        display: flex;
+        width: 100%;
+        justify-content: flex-start;
+
+
+    }
+    .filme:hover .botoes{
+        position: absolute;
+        width: 100%;
+        left: 0;
+        bottom: 0;
+    }
+    .botoes ul li a{
+        color: purple;
+    }
+    .botoes ul li a i{
+        font-size: 150%;
+    }
+    .botoes ul li:first-of-type a i{
+        font-size: 240%;
+
+    }
+
+    .botoes ul li{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+    }
+    .botoes ul li:not(:first-of-type){
+        margin-right: .4rem;
+    }
+}
+
+@media screen and (min-width:992px){
+    .filme{
+        height: 25vw;
+    }
+    .conteudo h3{
+        font-size: 1.8vw;
+    }
+    .conteudo p{
+        font-size: 0.9vw;
+    }
+} 

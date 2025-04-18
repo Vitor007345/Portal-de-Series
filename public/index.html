@@ -2,148 +2,429 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Netflixo</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
-        crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="styles.css">
-    <script src="app.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Netflixo</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
+    crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js"></script>
 
 </head>
 
 <body>
-    <header class="d-flex justify-content-between bg-dark align-items-center">
+  <header class="d-flex justify-content-between bg-dark align-items-center">
+
+    <img src="imgs/logo.png" alt="Logo-netflixo" class="logo">
+    <nav class="search-bar">
+      <input type="text" name="" id="search-input" class="search-input" placeholder="Search...">
+      <button id="btsearch" class="btsearch"><i class="bi bi-search"></i></button>
+      <div class="div-filter">
+        <button id="btfilter" class="btfilter">
+          <i class="bi bi-funnel"></i>
+          <i class="bi bi-funnel-fill"></i>
+        </button>
+        <div id="filter-dropdown" class="dropdown">
+          <ul>
+            <li><input type="checkbox" id="input-acao"><label for="input-acao">Ação</label></li>
+            <li><input type="checkbox" id="input-aventura"><label for="input-aventura">Aventura</label>
+            </li>
+            <li><input type="checkbox" id="input-comedia"><label for="input-comedia">Comédia</label>
+            </li>
+            <li><input type="checkbox" id="input-drama"><label for="input-drama">Drama</label></li>
+            <li><input type="checkbox" id="input-animacao"><label for="input-animacao">Animação</label>
+            </li>
+            <li><input type="checkbox" id="input-romance"><label for="input-romance">Romance</label>
+            </li>
+            <li><input type="checkbox" id="input-terror"><label for="input-terror">Terror</label></li>
+            <li><input type="checkbox" id="input-suspense"><label for="input-suspense">Suspense</label>
+            </li>
+            <li><input type="checkbox" id="input-documentarios"><label for="input-documentarios">Documentários</label>
+            </li>
+            <li><input type="checkbox" id="input-ficcao"><label for="input-ficcao">Ficção
+                Científica</label>
+            </li>
+          </ul>
+        </div> <!--Fim dropdown-->
+      </div><!--Fim filter-dropdown-->
+    </nav> <!--Fim search-bar-->
+    <div class="user-info align-self-baseline">
+      <div class="not-logged">
+        <button class="btlogin">Login</button>
+        <button class="btsignup">Sign-up</button>
+      </div>
+      <div class="logged">
+        <span id="username">Username</span>
+        <img src="imgs/basicUser.png" alt="" id="userimg" class="userimg">
+      </div>
+
+    </div> <!--Fim user-info-->
+
+
+  </header>
+  <main>
+    <section class="destaques">
+      <div id="carouselExampleCaptions" class="carousel slide">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
+            aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+            aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+            aria-label="Slide 3"></button>
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3"
+            aria-label="Slide 4"></button>
+        </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+
+            <div class="carousel-img-div">
+              <div class="degrade"></div>
+              <img src="imgs/filmes/banners/aot.jpg" class="d-block w-100 custom-img-carousel" alt="...">
+            </div>
+
+            <div class="carousel-caption d-none d-md-block custom-caption">
+              <h5>First slide label</h5>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Error harum quis aut, similique natus sed
+                aperiam quod nesciunt provident neque ea. Sapiente, dolorum maxime perspiciatis tempore voluptatem
+                corrupti itaque deleniti.</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+
+            <div class="carousel-img-div">
+              <div class="degrade"></div>
+              <img src="imgs/filmes/banners/frieren.jpg" class="d-block w-100 custom-img-carousel" alt="...">
+            </div>
+
+            <div class="carousel-caption d-none d-md-block custom-caption">
+              <h5>Second slide label</h5>
+              <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eum perspiciatis amet eveniet qui laboriosam,
+                quod doloribus animi, sed itaque, possimus tenetur quos id pariatur totam. Laborum explicabo doloremque
+                aperiam officiis.</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+
+            <div class="carousel-img-div">
+              <div class="degrade"></div>
+              <img src="imgs/filmes/banners/jujutsu.jpg" class="d-block w-100 custom-img-carousel" alt="...">
+            </div>
+
+            <div class="carousel-caption d-none d-md-block custom-caption">
+              <h5>Third slide label</h5>
+              <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sapiente maiores temporibus officiis minima
+                iusto, qui nisi laboriosam sint molestiae dicta non magnam eveniet debitis quidem porro, voluptas
+                quaerat amet facilis.</p>
+            </div>
+
+          </div>
+          <div class="carousel-item">
+
+            <div class="carousel-img-div">
+              <div class="degrade"></div>
+              <img src="imgs/filmes/banners/arcane.jpg" class="d-block w-100 custom-img-carousel" alt="...">
+            </div>
+
+            <div class="carousel-caption d-none d-md-block custom-caption">
+              <h5>Forth slide label</h5>
+              <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sapiente maiores temporibus officiis minima
+                iusto, qui nisi laboriosam sint molestiae dicta non magnam eveniet debitis quidem porro, voluptas
+                quaerat amet facilis.</p>
+            </div>
+
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
+          data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
+          data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </section>
+    <section class="filmes container-fluid">
+
+      <div class="row divFrase">
+        <h3>Frase aleatoria 1</h3>
+      </div>
+      <div class="row">
+        <div class="filme col-6 col-md-4 col-lg-2">
+          <div class="conteudo">
+            <h4 class="titulo">Filme 1</h4>
+            <p class="sinopse">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque tempora, eum ullam totam
+              nemo pariatur dolorum alias saepe dolore quisquam quam ab, autem iste accusamus, dolores ducimus fugiat
+              maxime porro.
+            </p>
+            <div class="botoes">
+              <ul>
+                <li><a href=""><i class="bi bi-play"></i></a></li>
+                <li><a href=""><i class="bi bi-bookmark"></i></a></li>
+                <li><a href=""><i class="bi bi-hand-thumbs-up"></i></a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="divImg">
+            <img src="imgs/filmes/banners/blackpanther.jpg" alt="">
+          </div>
+        </div>
+
+        <div class="filme col-6 col-md-4 col-lg-2">
+          <div class="conteudo">
+            <h4 class="titulo">Filme 2</h4>
+            <p class="sinopse">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque tempora, eum ullam totam
+              nemo pariatur dolorum alias saepe dolore quisquam quam ab, autem iste accusamus, dolores ducimus fugiat
+              maxime porro.
+            </p>
+            <div class="botoes">
+              <ul>
+                <li><a href=""><i class="bi bi-play"></i></a></li>
+                <li><a href=""><i class="bi bi-bookmark"></i></a></li>
+                <li><a href=""><i class="bi bi-hand-thumbs-up"></i></a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="divImg">
+            <img src="imgs/filmes/banners/endgame.jpg" alt="">
+          </div>
+        </div>
+
+        <div class="filme col-6 col-md-4 col-lg-2">
+          <div class="conteudo">
+            <h4 class="titulo">Filme 2</h4>
+            <p class="sinopse">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque tempora, eum ullam totam
+              nemo pariatur dolorum alias saepe dolore quisquam quam ab, autem iste accusamus, dolores ducimus fugiat
+              maxime porro.
+            </p>
+            <div class="botoes">
+              <ul>
+                <li><a href=""><i class="bi bi-play"></i></a></li>
+                <li><a href=""><i class="bi bi-bookmark"></i></a></li>
+                <li><a href=""><i class="bi bi-hand-thumbs-up"></i></a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="divImg">
+            <img src="imgs/filmes/banners/endgame.jpg" alt="">
+          </div>
+        </div>
+
+        <div class="filme col-6 col-md-4 col-lg-2">
+          <div class="conteudo">
+            <h4 class="titulo">Filme 2</h4>
+            <p class="sinopse">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque tempora, eum ullam totam
+              nemo pariatur dolorum alias saepe dolore quisquam quam ab, autem iste accusamus, dolores ducimus fugiat
+              maxime porro.
+            </p>
+            <div class="botoes">
+              <ul>
+                <li><a href=""><i class="bi bi-play"></i></a></li>
+                <li><a href=""><i class="bi bi-bookmark"></i></a></li>
+                <li><a href=""><i class="bi bi-hand-thumbs-up"></i></a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="divImg">
+            <img src="imgs/filmes/banners/endgame.jpg" alt="">
+          </div>
+        </div>
+
+        <div class="filme col-6 col-md-4 col-lg-2">
+          <div class="conteudo">
+            <h4 class="titulo">Filme 2</h4>
+            <p class="sinopse">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque tempora, eum ullam totam
+              nemo pariatur dolorum alias saepe dolore quisquam quam ab, autem iste accusamus, dolores ducimus fugiat
+              maxime porro.
+            </p>
+            <div class="botoes">
+              <ul>
+                <li><a href=""><i class="bi bi-play"></i></a></li>
+                <li><a href=""><i class="bi bi-bookmark"></i></a></li>
+                <li><a href=""><i class="bi bi-hand-thumbs-up"></i></a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="divImg">
+            <img src="imgs/filmes/banners/endgame.jpg" alt="">
+          </div>
+        </div>
+
+        <div class="filme col-6 col-md-4 col-lg-2">
+          <div class="conteudo">
+            <h4 class="titulo">Filme 2</h4>
+            <p class="sinopse">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque tempora, eum ullam totam
+              nemo pariatur dolorum alias saepe dolore quisquam quam ab, autem iste accusamus, dolores ducimus fugiat
+              maxime porro.
+            </p>
+            <div class="botoes">
+              <ul>
+                <li><a href=""><i class="bi bi-play"></i></a></li>
+                <li><a href=""><i class="bi bi-bookmark"></i></a></li>
+                <li><a href=""><i class="bi bi-hand-thumbs-up"></i></a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="divImg">
+            <img src="imgs/filmes/banners/arcane.jpg" alt="">
+          </div>
+        </div>
+
+
+
+
+
         
-            <img src="imgs/logo.png" alt="Logo-netflixo" class="logo">
-            <nav class="search-bar">
-                <input type="text" name="" id="search-input" class="search-input" placeholder="Search...">
-                <button id="btsearch" class="btsearch"><i class="bi bi-search"></i></button>
-                <div class="div-filter">
-                    <button id="btfilter" class="btfilter">
-                        <i class="bi bi-funnel"></i>
-                        <i class="bi bi-funnel-fill"></i>
-                    </button>
-                    <div id="filter-dropdown" class="dropdown">
-                        <ul>
-                            <li><input type="checkbox" id="input-acao"><label for="input-acao">Ação</label></li>
-                            <li><input type="checkbox" id="input-aventura"><label for="input-aventura">Aventura</label>
-                            </li>
-                            <li><input type="checkbox" id="input-comedia"><label for="input-comedia">Comédia</label>
-                            </li>
-                            <li><input type="checkbox" id="input-drama"><label for="input-drama">Drama</label></li>
-                            <li><input type="checkbox" id="input-animacao"><label for="input-animacao">Animação</label>
-                            </li>
-                            <li><input type="checkbox" id="input-romance"><label for="input-romance">Romance</label>
-                            </li>
-                            <li><input type="checkbox" id="input-terror"><label for="input-terror">Terror</label></li>
-                            <li><input type="checkbox" id="input-suspense"><label for="input-suspense">Suspense</label>
-                            </li>
-                            <li><input type="checkbox" id="input-documentarios"><label
-                                    for="input-documentarios">Documentários</label></li>
-                            <li><input type="checkbox" id="input-ficcao"><label for="input-ficcao">Ficção
-                                    Científica</label>
-                            </li>
-                        </ul>
-                    </div> <!--Fim dropdown-->
-                </div><!--Fim filter-dropdown-->
-            </nav> <!--Fim search-bar-->
-            <div class="user-info align-self-baseline">
-                <div class="not-logged">
-                    <button class="btlogin">Login</button>
-                    <button class="btsignup">Sign-up</button>
-                </div>
-                <div class="logged">
-                    <span id="username">Username</span>
-                    <img src="imgs/basicUser.png" alt="" id="userimg" class="userimg">
-                </div>
-
-            </div> <!--Fim user-info-->
-
         
-    </header>
-    <main>
-        <section class="destaques">
-            <div id="carouselExampleCaptions" class="carousel slide">
-                <div class="carousel-indicators">
-                  <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                  <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                  <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
-                  <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3" aria-label="Slide 4"></button>
-                </div>
-                <div class="carousel-inner">
-                  <div class="carousel-item active">
+        
 
-                    <div class="carousel-img-div">
-                        <div class="degrade"></div>
-                        <img src="imgs/filmes/banners/aot.jpg" class="d-block w-100 custom-img-carousel" alt="...">
-                    </div>
-                    
-                    <div class="carousel-caption d-none d-md-block custom-caption">
-                      <h5>First slide label</h5>
-                      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Error harum quis aut, similique natus sed aperiam quod nesciunt provident neque ea. Sapiente, dolorum maxime perspiciatis tempore voluptatem corrupti itaque deleniti.</p>
-                    </div>
-                  </div>
-                  <div class="carousel-item">
+      </div>
 
-                    <div class="carousel-img-div">
-                        <div class="degrade"></div>
-                        <img src="imgs/filmes/banners/frieren.jpg" class="d-block w-100 custom-img-carousel" alt="...">
-                    </div>
+      <div class="row divFrase">
+        <h3>Frase aleatoria 2</h3>
+      </div>
+      <div class="row">
+        <div class="filme col-6 col-md-4 col-lg-2">
+          <div class="conteudo">
+            <h4 class="titulo">Filme 2</h4>
+            <p class="sinopse">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque tempora, eum ullam totam
+              nemo pariatur dolorum alias saepe dolore quisquam quam ab, autem iste accusamus, dolores ducimus fugiat
+              maxime porro.
+            </p>
+            <div class="botoes">
+              <ul>
+                <li><a href=""><i class="bi bi-play"></i></a></li>
+                <li><a href=""><i class="bi bi-bookmark"></i></a></li>
+                <li><a href=""><i class="bi bi-hand-thumbs-up"></i></a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="divImg">
+            <img src="imgs/filmes/banners/frieren.jpg" alt="">
+          </div>
+        </div>
+        <div class="filme col-6 col-md-4 col-lg-2">
+          <div class="conteudo">
+            <h4 class="titulo">Filme 2</h4>
+            <p class="sinopse">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque tempora, eum ullam totam
+              nemo pariatur dolorum alias saepe dolore quisquam quam ab, autem iste accusamus, dolores ducimus fugiat
+              maxime porro.
+            </p>
+            <div class="botoes">
+              <ul>
+                <li><a href=""><i class="bi bi-play"></i></a></li>
+                <li><a href=""><i class="bi bi-bookmark"></i></a></li>
+                <li><a href=""><i class="bi bi-hand-thumbs-up"></i></a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="divImg">
+            <img src="imgs/filmes/banners/frieren.jpg" alt="">
+          </div>
+        </div>
+        <div class="filme col-6 col-md-4 col-lg-2">
+          <div class="conteudo">
+            <h4 class="titulo">Filme 2</h4>
+            <p class="sinopse">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque tempora, eum ullam totam
+              nemo pariatur dolorum alias saepe dolore quisquam quam ab, autem iste accusamus, dolores ducimus fugiat
+              maxime porro.
+            </p>
+            <div class="botoes">
+              <ul>
+                <li><a href=""><i class="bi bi-play"></i></a></li>
+                <li><a href=""><i class="bi bi-bookmark"></i></a></li>
+                <li><a href=""><i class="bi bi-hand-thumbs-up"></i></a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="divImg">
+            <img src="imgs/filmes/banners/frieren.jpg" alt="">
+          </div>
+        </div>
+        <div class="filme col-6 col-md-4 col-lg-2">
+          <div class="conteudo">
+            <h4 class="titulo">Filme 2</h4>
+            <p class="sinopse">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque tempora, eum ullam totam
+              nemo pariatur dolorum alias saepe dolore quisquam quam ab, autem iste accusamus, dolores ducimus fugiat
+              maxime porro.
+            </p>
+            <div class="botoes">
+              <ul>
+                <li><a href=""><i class="bi bi-play"></i></a></li>
+                <li><a href=""><i class="bi bi-bookmark"></i></a></li>
+                <li><a href=""><i class="bi bi-hand-thumbs-up"></i></a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="divImg">
+            <img src="imgs/filmes/banners/frieren.jpg" alt="">
+          </div>
+        </div>
+        <div class="filme col-6 col-md-4 col-lg-2">
+          <div class="conteudo">
+            <h4 class="titulo">Filme 2</h4>
+            <p class="sinopse">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque tempora, eum ullam totam
+              nemo pariatur dolorum alias saepe dolore quisquam quam ab, autem iste accusamus, dolores ducimus fugiat
+              maxime porro.
+            </p>
+            <div class="botoes">
+              <ul>
+                <li><a href=""><i class="bi bi-play"></i></a></li>
+                <li><a href=""><i class="bi bi-bookmark"></i></a></li>
+                <li><a href=""><i class="bi bi-hand-thumbs-up"></i></a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="divImg">
+            <img src="imgs/filmes/banners/frieren.jpg" alt="">
+          </div>
+        </div>
+        <div class="filme col-6 col-md-4 col-lg-2">
+          <div class="conteudo">
+            <h4 class="titulo">Filme 2</h4>
+            <p class="sinopse">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque tempora, eum ullam totam
+              nemo pariatur dolorum alias saepe dolore quisquam quam ab, autem iste accusamus, dolores ducimus fugiat
+              maxime porro.
+            </p>
+            <div class="botoes">
+              <ul>
+                <li><a href=""><i class="bi bi-play"></i></a></li>
+                <li><a href=""><i class="bi bi-bookmark"></i></a></li>
+                <li><a href=""><i class="bi bi-hand-thumbs-up"></i></a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="divImg">
+            <img src="imgs/filmes/banners/frieren.jpg" alt="">
+          </div>
+        </div>
+      </div>
 
-                    <div class="carousel-caption d-none d-md-block custom-caption">
-                      <h5>Second slide label</h5>
-                      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eum perspiciatis amet eveniet qui laboriosam, quod doloribus animi, sed itaque, possimus tenetur quos id pariatur totam. Laborum explicabo doloremque aperiam officiis.</p>
-                    </div>
-                  </div>
-                  <div class="carousel-item">
 
-                    <div class="carousel-img-div">
-                        <div class="degrade"></div>
-                        <img src="imgs/filmes/banners/jujutsu.jpg" class="d-block w-100 custom-img-carousel" alt="...">
-                    </div>
+    </section>
+  </main>
+  <footer>
 
-                    <div class="carousel-caption d-none d-md-block custom-caption">
-                      <h5>Third slide label</h5>
-                      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sapiente maiores temporibus officiis minima iusto, qui nisi laboriosam sint molestiae dicta non magnam eveniet debitis quidem porro, voluptas quaerat amet facilis.</p>
-                    </div>
-
-                  </div>
-                  <div class="carousel-item">
-
-                    <div class="carousel-img-div">
-                        <div class="degrade"></div>
-                        <img src="imgs/filmes/banners/arcane.jpg" class="d-block w-100 custom-img-carousel" alt="...">
-                    </div>
-
-                    <div class="carousel-caption d-none d-md-block custom-caption">
-                      <h5>Forth slide label</h5>
-                      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sapiente maiores temporibus officiis minima iusto, qui nisi laboriosam sint molestiae dicta non magnam eveniet debitis quidem porro, voluptas quaerat amet facilis.</p>
-                    </div>
-
-                  </div>
-                </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                  <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                  <span class="visually-hidden">Next</span>
-                </button>
-              </div>
-        </section>
-        <section class="filmes">
-
-        </section>
-    </main>
-    <footer>
-
-    </footer>
+  </footer>
 </body>
 
 </html>
