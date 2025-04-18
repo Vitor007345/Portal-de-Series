@@ -727,6 +727,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     setupFiltro();
     setupDetalhes();
+    carregaFilmesCelular();
 
 })
 
@@ -849,6 +850,86 @@ function setupDetalhes(){
     }
 
     
+}
+
+function carregaFilmesCelular(){
+    const frases = [
+        "Recomendados",
+        "Populares",
+    ];
+    const numDeRows = frases.length;
+    let numPorRow = dados.length / numDeRows;
+    if(numPorRow < 6){
+        console.log('Banco de dados pequeno demais para o número de frases');
+        console.log('Aumente o banco de dados ou diminua o número de frases');
+        alert('Erro no carregamento dos filme');
+        return;
+    }
+    let numPrimeiraRow = numPorRow;
+    if(!Number.isInteger(numPorRow)){
+        numPorRow = Math.floor(numPorRow);
+        numPrimeiraRow = numPorRow + (dados.length % numDeRows);
+    }
+
+    let ordemFilmes = randomSequence(1, dados.length);
+
+    let sFilmes = document.getElementById('sectionFilmes');
+    sFilmes.innerHTML = "";
+    let c = 0;
+    for(let i = 1; i <= numDeRows; i++){
+        newFrase(frases[i-1], sFilmes, i)
+        if(i === 1){
+            for(; c < numPrimeiraRow; c++){
+                
+                carregaOFilme(c, ordemFilmes, sFilmes, i);
+            }
+        }else{
+            
+            for(let j = 0; j < numPorRow; c++, j++){
+                carregaOFilme(c, ordemFilmes, sFilmes, i);
+            }
+        }
+    }
+
+}
+function newFrase(frase, sFilmes, row){
+    sFilmes.innerHTML += `
+        <div class="row divFrase">
+            <h3>${frase}</h3>
+        </div>
+        <div id="row${row}" class="row">
+        </div>
+    `;
+
+}
+function carregaOFilme(i, ordem, sFilmes, row){
+    let id = ordem[i];
+    let infoFilme = dados.find((elem)=>elem.id == id);
+    linha = sFilmes.querySelector(`#row${row}`);
+    console.log(linha);
+    linha.innerHTML += `
+        <div class="filme col-6 col-md-4 col-lg-2">
+          <div class="conteudo">
+            <h4 class="titulo">${(!infoFilme.subtitulo? infoFilme.titulo: infoFilme.titulo + "&nbsp;" + infoFilme.subtitulo)}</h4>
+            <p class="sinopse">${infoFilme.sinopse}</p>
+            <div class="botoes">
+              <ul>
+                <li><a href=""><i class="bi bi-play"></i></a></li>
+                <li><a href=""><i class="bi bi-bookmark"></i></a></li>
+                <li><a href=""><i class="bi bi-hand-thumbs-up"></i></a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="divImg">
+            <img src="${infoFilme.imgPrinciapl}" alt="">
+          </div>
+        </div>
+
+    `;
+
+
+
+
 }
 
 
