@@ -13,6 +13,7 @@
     border-radius: 30px;
 }
 
+
 /*Formatação geral*/
 button{
     background: none;
@@ -276,3 +277,27 @@ body{
         font-size: 0.9vw;
     }
 } 
+
+/*corousel no pc ao invez do scroll*/
+
+.bts-custom-carousel{
+    display: none;
+}
+
+@media screen and (min-width:768px){
+    .filmes .row{
+        /*overflow: hidden;*/
+    }
+    .bts-custom-carousel{
+        display: inline-block;
+        width:fit-content;
+        z-index: 10;
+
+    }
+    .prev {
+        left: 0;
+    }
+    .next{
+        right: 0;
+    }
+}

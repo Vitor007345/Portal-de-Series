@@ -727,7 +727,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     setupFiltro();
     setupDetalhes();
-    carregaFilmesCelular();
+    //carregaFilmes();
+    caroulselParaPC(6, 2);
 
 })
 
@@ -852,7 +853,7 @@ function setupDetalhes(){
     
 }
 
-function carregaFilmesCelular(){
+function carregaFilmes(){
     const frases = [
         "Recomendados",
         "Populares",
@@ -932,6 +933,62 @@ function carregaOFilme(i, ordem, sFilmes, row){
 
 }
 
+function caroulselParaPC(itemsPerView, row){
+    const track = document.querySelector('.carousel-track');
+    const items = document.querySelectorAll(`#row${row} > .filme`);
+    const nextBtn = document.querySelector('.next');
+    const prevBtn = document.querySelector('.prev');
+    console.log(items);
+    console.log(itemsPerView)
+    let currentIndex = 0;
+    const totalItems = items.length;
+    
+    prevBtn.style.display = 'none';
+    console.log(totalItems);
+
+
+    function updateCarousel() {
+        const itemWidth = items[0].offsetWidth;
+        track.scrollLeft = currentIndex * itemWidth;
+        prevBtn.style.left = `${currentIndex * itemWidth}px`;
+        nextBtn.style.right = `-${currentIndex * itemWidth}px`;
+
+        if((currentIndex + itemsPerView) === totalItems){
+            nextBtn.style.display = 'none';
+        }else{
+            nextBtn.style.display = 'block';
+        }
+        if(currentIndex === 0){
+            prevBtn.style.display = 'none';
+        }else{
+            prevBtn.style.display = 'block';
+        }
+        console.log(currentIndex);
+    }
+
+    nextBtn.addEventListener('click', () => {
+        if (currentIndex < totalItems - itemsPerView) {
+            currentIndex += itemsPerView;
+            if(currentIndex > (totalItems - itemsPerView)){
+                currentIndex = totalItems - itemsPerView;
+            }
+        
+            updateCarousel();
+        }
+    });
+
+    prevBtn.addEventListener('click', () => {
+        if (currentIndex > 0) {
+            if((currentIndex - itemsPerView) >= 0){
+                currentIndex-=itemsPerView;
+            }else{
+                currentIndex = 0;
+            }
+            updateCarousel();
+        }
+    });
+
+}
 
 //funções reutilizaveis
 function abrirDropdown(dropdown) {
