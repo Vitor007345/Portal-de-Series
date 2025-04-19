@@ -732,11 +732,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function configCarouselFilmesParaViewPort(){
         btsCarouselPC = document.querySelectorAll('.bts-custom-carousel');
-        if(window.innerWidth > 768){
+        if(window.innerWidth >= 768){
             btsCarouselPC.forEach((bt)=>{
                 bt.style.display = 'block';
             });
-            if(window.innerWidth > 992){
+            if(window.innerWidth >= 992){
                 caroulselParaPC(6, 1);
                 caroulselParaPC(6, 2);
             }else{
@@ -1026,6 +1026,11 @@ function caroulselParaPC(itemsPerView, row){
         }
     });
 
+    window.addEventListener('resize', ()=>{
+        if(window.innerWidth >= 768){
+            updateCarousel();
+        }
+    })
 
 }
 

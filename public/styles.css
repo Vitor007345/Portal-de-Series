@@ -209,9 +209,17 @@ body{
     display: none;
 }
 
+.conteudo{
+    display: none;
+}
+
 @media screen and (min-width:768px) {
     .filme{
         height: 50vw;
+    }
+
+    .conteudo{
+        display: block;
     }
 
     .filme:hover .conteudo{
@@ -301,4 +309,37 @@ body{
         right: 0;
     }
     
+}
+
+/*Formatação do footer*/
+
+footer{
+    color: white;
+    padding: 1rem 0;
+}
+.redesIcons{
+    padding: 0 .5rem;
+}
+.redesIcons a{
+    color: inherit;
+}
+.redesIcons a i{
+    font-size: 150%;
+}
+.autoria ul{
+    list-style: none;
+    padding-left: 0;
+}
+.minhaImg{
+    width: 90px;
+    height: 90px;
+}
+
+footer .row{
+    flex-direction: column-reverse;
+}
+@media screen and (min-width:768px){
+    footer .row{
+        flex-direction: row;
+    }
 }
