@@ -727,8 +727,38 @@ document.addEventListener('DOMContentLoaded', () => {
 
     setupFiltro();
     setupDetalhes();
-    //carregaFilmes();
-    caroulselParaPC(6, 2);
+    carregaFilmes();
+
+
+    function configCarouselFilmesParaViewPort(){
+        btsCarouselPC = document.querySelectorAll('.bts-custom-carousel');
+        if(window.innerWidth > 768){
+            btsCarouselPC.forEach((bt)=>{
+                bt.style.display = 'block';
+            });
+            if(window.innerWidth > 992){
+                caroulselParaPC(6, 1);
+                caroulselParaPC(6, 2);
+            }else{
+                caroulselParaPC(3, 1);
+                caroulselParaPC(3, 2);
+            }
+        }else{
+            btsCarouselPC.forEach((bt)=>{
+                bt.style.display = 'none';
+            });
+
+        }
+    }
+
+    configCarouselFilmesParaViewPort();
+    
+
+    window.addEventListener('resize', ()=>{
+        configCarouselFilmesParaViewPort();
+    })
+    
+    
 
 })
 
@@ -884,11 +914,20 @@ function carregaFilmes(){
                 
                 carregaOFilme(c, ordemFilmes, sFilmes, i);
             }
+            sFilmes.querySelector(`#row${i}`).innerHTML += `
+                <button id="prev${i}" class="btn btn-dark prev position-absolute  top-50 bts-custom-carousel"><span class="carousel-control-prev-icon" aria-hidden="true"></span></button>
+                <button id="next${i}" class="btn btn-dark next position-absolute  top-50 bts-custom-carousel"><span class="carousel-control-next-icon" aria-hidden="true"></span></button>
+
+            `;
         }else{
-            
             for(let j = 0; j < numPorRow; c++, j++){
                 carregaOFilme(c, ordemFilmes, sFilmes, i);
             }
+            sFilmes.querySelector(`#row${i}`).innerHTML += `
+                <button id="prev${i}" class="btn btn-dark prev position-absolute  top-50 bts-custom-carousel"><span class="carousel-control-prev-icon" aria-hidden="true"></span></button>
+                <button id="next${i}" class="btn btn-dark next position-absolute  top-50 bts-custom-carousel"><span class="carousel-control-next-icon" aria-hidden="true"></span></button>
+
+            `;
         }
     }
 
@@ -898,7 +937,7 @@ function newFrase(frase, sFilmes, row){
         <div class="row divFrase">
             <h3>${frase}</h3>
         </div>
-        <div id="row${row}" class="row">
+        <div id="row${row}" class="row position-relative carousel-track">
         </div>
     `;
 
@@ -907,7 +946,6 @@ function carregaOFilme(i, ordem, sFilmes, row){
     let id = ordem[i];
     let infoFilme = dados.find((elem)=>elem.id == id);
     linha = sFilmes.querySelector(`#row${row}`);
-    console.log(linha);
     linha.innerHTML += `
         <div class="filme col-6 col-md-4 col-lg-2">
           <div class="conteudo">
@@ -934,12 +972,12 @@ function carregaOFilme(i, ordem, sFilmes, row){
 }
 
 function caroulselParaPC(itemsPerView, row){
-    const track = document.querySelector('.carousel-track');
+    const track = document.getElementById(`row${row}`);
     const items = document.querySelectorAll(`#row${row} > .filme`);
-    const nextBtn = document.querySelector('.next');
-    const prevBtn = document.querySelector('.prev');
-    console.log(items);
-    console.log(itemsPerView)
+    const nextBtn = document.getElementById(`next${row}`)
+    const prevBtn = document.getElementById(`prev${row}`)
+    //console.log(items);
+    //console.log(itemsPerView)
     let currentIndex = 0;
     const totalItems = items.length;
     
@@ -987,6 +1025,7 @@ function caroulselParaPC(itemsPerView, row){
             updateCarousel();
         }
     });
+
 
 }
 
@@ -1057,3 +1096,4 @@ function randomSequencePorDia(min, max, index){
     }
     return sequencia;
 }
+

@@ -286,7 +286,7 @@ body{
 
 @media screen and (min-width:768px){
     .filmes .row{
-        /*overflow: hidden;*/
+        overflow: hidden;
     }
     .bts-custom-carousel{
         display: inline-block;
@@ -300,4 +300,5 @@ body{
     .next{
         right: 0;
     }
+    
 }
