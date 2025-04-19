@@ -21,7 +21,7 @@ const dados = [
                 "descricao": "Michael está sentado em uma cadeira imponente durante uma reunião formal, com expressão séria e postura reservada. A imagem reflete seu cansaço, o peso da liderança e a dificuldade de se afastar do passado criminoso que ele próprio construiu."
             }
         ],
-        "sinopse": "A história gira em torno da família mafiosa Corleone, liderada por Don Vito Corleone. Quando ele recusa entrar no negócio de drogas proposto por outros mafiosos, sua família se torna alvo de ataques. Após uma tentativa de assassinato contra Don Vito, seu filho Michael, inicialmente relutante em participar dos negócios da família, se envolve profundamente. O filme mostra a transição de Michael de um herói de guerra para o novo chefe da máfia. A obra explora temas como lealdade, poder e corrupção. As decisões de Michael marcam o início de uma nova era para os Corleone. O roteiro é envolvente e a direção é impecável. O filme é amplamente considerado um dos maiores da história. Suas atuações marcantes moldaram o cinema de máfia como conhecemos hoje.",
+        "sinopse": "A história mostra a ascensão de Michael Corleone ao comando da máfia após um ataque ao seu pai, Don Vito. O filme explora poder, lealdade e corrupção, sendo um marco do cinema.",
         "categoria": ["Drama", "Crime"],
         "diretor": "Francis Ford Coppola",
         "data": "1972-03-24",
@@ -50,7 +50,7 @@ const dados = [
                 "descricao": "Neo realiza o famoso desvio de balas, inclinando-se para trás de forma quase impossível enquanto o ambiente ao redor parece distorcido. A cena representa o momento em que ele começa a dominar as leis da Matrix, desafiando as regras do mundo simulado com suas habilidades recém-descobertas."
             }
         ],
-        "sinopse": "Matrix acompanha a história de Thomas Anderson, um programador que leva uma vida dupla como o hacker Neo. Ele é contatado por um misterioso grupo liderado por Morpheus, que o revela a verdade: a realidade em que vive é uma simulação controlada por máquinas. Neo é considerado o escolhido, alguém com o poder de libertar a humanidade. Ele começa um intenso treinamento para manipular o sistema da Matrix. O filme questiona o que é real, misturando filosofia com ação. Visualmente inovador, revolucionou os efeitos especiais. A narrativa é complexa, mas cativante. Matrix é referência em ficção científica e cultura cyberpunk. Uma obra que marcou gerações e ainda influencia o cinema atual.",
+        "sinopse": "Matrix conta a jornada de Neo, um hacker que descobre viver numa simulação controlada por máquinas. Ao ser chamado a libertar a humanidade, ele enfrenta questões filosóficas e desafia a realidade. O filme revolucionou o cinema com seus efeitos e permanece influente até hoje.",
         "categoria": ["Ação", "Ficção Científica"],
         "diretor": "Lana e Lilly Wachowski",
         "data": "1999-03-31",
@@ -79,7 +79,7 @@ const dados = [
                 "descricao": "Aqui, vemos a equipe da missão Endurance, composta por astronautas que viajam através de um buraco de minhoca em busca de um novo lar para a humanidade. A imagem destaca os trajes espaciais e o ambiente futurista da nave."
             }
         ],
-        "sinopse": "A Terra está morrendo. Em meio a uma crise ambiental, um grupo de cientistas decide explorar outros planetas em busca de um novo lar para a humanidade. O ex-piloto Cooper se junta à missão, deixando seus filhos para trás. A jornada os leva por buracos de minhoca, planetas hostis e descobertas sobre o tempo e o espaço. Interestelar mistura física teórica com drama familiar. A relação de Cooper com sua filha Murphy é o coração emocional do filme. A trilha sonora impactante e a fotografia grandiosa tornam tudo épico. O filme explora conceitos como relatividade e buracos negros com profundidade. É um convite para refletir sobre a existência humana. Uma experiência visual e emocional inesquecível.",
+        "sinopse": "Interestelar acompanha a jornada de Cooper, que parte em busca de um novo lar para a humanidade enquanto enfrenta os limites do tempo e do espaço. Combinando ciência e drama familiar, o filme é uma reflexão profunda sobre amor, existência e o futuro da humanidade.",
         "categoria": ["Ficção Científica", "Drama"],
         "diretor": "Christopher Nolan",
         "data": "2014-11-07",
@@ -108,7 +108,7 @@ const dados = [
                 "descricao": "Nesta imagem, Thor aparece em sua forma poderosa durante a batalha final. Ele empunha tanto o Mjolnir quanto o Stormbreaker, com olhos brilhando de trovão. O visual imponente representa o Deus do Trovão em sua força máxima, pronto para enfrentar Thanos ao lado dos Vingadores."
             }
         ],
-        "sinopse": "Após os eventos devastadores de Guerra Infinita, metade da vida no universo foi eliminada por Thanos. Os Vingadores remanescentes tentam seguir em frente, mas não desistem da esperança. Quando surge a possibilidade de viajar no tempo, eles traçam um plano arriscado para recuperar as Joias do Infinito e desfazer o estalo. A missão os leva por momentos marcantes do passado do MCU. As batalhas são épicas e os sacrifícios são grandes. O filme é uma carta de amor aos fãs, fechando um arco de 10 anos. A emoção domina cada cena final. O reencontro dos heróis e o clímax com todos juntos é inesquecível. Um marco na história do cinema de super-heróis. Um verdadeiro espetáculo visual e emocional.",
+        "sinopse": "Vingadores: Ultimato mostra os heróis tentando reverter o estalo de Thanos com uma missão no tempo. Cheio de ação, sacrifícios e emoção, o filme encerra uma era do MCU de forma épica e memorável, sendo um marco no cinema de super-heróis.",
         "categoria": ["Ação", "Aventura"],
         "diretor": "Anthony e Joe Russo",
         "data": "2019-04-26",
@@ -137,7 +137,7 @@ const dados = [
                 "descricao": " Arthur aplica a maquiagem do palhaço diante do espelho, completando sua metamorfose no Coringa. A expressão no espelho reflete a fusão entre sua dor interna e a persona que está prestes a abraçar."
             }
         ],
-        "sinopse": "Arthur Fleck é um homem com distúrbios mentais que tenta encontrar seu lugar em uma sociedade fria e violenta. Trabalhando como palhaço de dia e sonhando em ser comediante à noite, ele sofre constantes abusos e humilhações. Sua vida desmorona quando perde o emprego e o acesso à medicação. A violência urbana e a marginalização o transformam. Lentamente, Arthur assume a identidade do Coringa, símbolo do caos e da rebelião. O filme mergulha fundo na psique de um homem à beira da loucura. A atuação de Joaquin Phoenix é visceral. A trilha sonora e a direção criam uma atmosfera sombria e intensa. Mais do que um filme de vilão, é um estudo social. Impactante, desconfortável e memorável.",
+        "sinopse": "Joker acompanha a transformação de Arthur Fleck, um homem marginalizado, em Coringa, símbolo do caos. O filme é um estudo sombrio sobre saúde mental e exclusão social, com atuação marcante de Joaquin Phoenix e uma atmosfera intensa e provocadora.",
         "categoria": ["Drama", "Suspense"],
         "diretor": "Todd Phillips",
         "data": "2019-10-04",
@@ -166,7 +166,7 @@ const dados = [
                 "descricao": "Este pôster apresenta os principais personagens do filme, com destaque para T'Challa e seus aliados. A arte visual combina elementos tradicionais africanos com uma estética futurista, refletindo a dualidade de Wakanda. O design do pôster foi amplamente elogiado por sua capacidade de capturar a essência do filme e gerar entusiasmo entre os fãs."
             }
         ],
-        "sinopse": "Após a morte de seu pai, T'Challa retorna à nação africana de Wakanda para ser coroado rei. Wakanda é um país tecnologicamente avançado, mas isolado do mundo. Seu trono é desafiado por Killmonger, um rival com uma visão oposta para o futuro do país. A luta entre tradição e mudança domina a narrativa. O filme é um marco cultural, celebrando a representatividade negra. A estética mistura futurismo com raízes africanas. A trilha sonora é marcante e cheia de identidade. Pantera Negra é um herói com conflitos reais e profundos. A história traz temas como herança, responsabilidade e justiça social. Um dos filmes mais importantes e impactantes do MCU.",
+        "sinopse": "Pantera Negra segue T'Challa, que luta pelo trono de Wakanda contra Killmonger, num confronto entre tradição e mudança. O filme é um marco cultural que mistura ação, identidade africana e temas como justiça e legado, sendo um dos mais impactantes do MCU.",
         "categoria": ["Ação", "Ficção Científica"],
         "diretor": "Ryan Coogler",
         "data": "2018-02-16",
@@ -195,7 +195,7 @@ const dados = [
                 "descricao": "Retrata uma descoberta chocante na casa, com atmosfera de suspense. É um momento-chave que vira a trama de cabeça para baixo."
             }
         ],
-        "sinopse": "A família Kim vive no subsolo e sobrevive de bicos. Um dia, o filho Ki-woo consegue um emprego como tutor de uma garota rica. Aos poucos, toda a família se infiltra na mansão dos Park, assumindo funções sem revelar seu parentesco. O contraste entre as duas famílias é o foco central. A trama mistura comédia, drama e terror de forma única. Conforme os segredos da casa vão sendo revelados, tudo sai do controle. O filme critica a desigualdade social com sutileza e impacto. A direção de Bong Joon-ho é precisa e afiada. O roteiro é surpreendente e imprevisível. Parasita é uma obra-prima moderna. Primeiro filme em língua estrangeira a ganhar o Oscar de Melhor Filme.",
+        "sinopse": "Parasita mostra a família Kim infiltrando-se na casa dos ricos Park, revelando aos poucos tensões e segredos. Com humor, suspense e crítica social, o filme expõe a desigualdade com maestria. Uma obra-prima que fez história ao vencer o Oscar de Melhor Filme.",
         "categoria": ["Drama", "Suspense"],
         "diretor": "Bong Joon-ho",
         "data": "2019-05-30",
@@ -226,7 +226,7 @@ const dados = [
             }
 
         ],
-        "sinopse": "Após sua identidade ser revelada, Peter Parker lida com as consequências públicas e legais de ser o Homem-Aranha. Desesperado, ele pede ajuda ao Doutor Estranho para apagar essa revelação da memória das pessoas. O feitiço dá errado e abre portais para outros universos. Vilões de versões anteriores do Homem-Aranha surgem em seu mundo. Com ajuda de aliados inesperados, Peter enfrenta desafios pessoais e épicos. O filme mistura nostalgia, emoção e ação. A reunião dos três Homens-Aranha é um dos momentos mais épicos do cinema pop recente. Peter amadurece e faz sacrifícios dolorosos. Um verdadeiro presente para os fãs da franquia. Uma conclusão emocionante para a trilogia de Tom Holland.",
+        "sinopse": "Spider-Man: Sem Volta Para Casa segue Peter Parker tentando corrigir os problemas causados pela revelação de sua identidade, com a ajuda do Doutor Estranho. O feitiço errado traz heróis e vilões de universos paralelos, culminando em uma reunião épica dos três Homens-Aranha.",
         "categoria": ["Ação", "Aventura"],
         "diretor": "Jon Watts",
         "data": "2021-12-17",
@@ -255,7 +255,7 @@ const dados = [
                 "descricao": "Imagem impressionante de um dos vermes colossais do deserto, símbolo do poder e do perigo em Arrakis."
             }
         ],
-        "sinopse": "Em um futuro distante, a humanidade colonizou planetas e depende de uma substância rara chamada especiaria. O jovem Paul Atreides é enviado com sua família para governar o planeta desértico Arrakis, fonte única da especiaria. Eles enfrentam traições e guerras pelo controle do planeta. Paul começa a ter visões do futuro e seu papel como messias dos Fremen, o povo nativo. O filme é uma adaptação da obra literária de Frank Herbert. Visualmente impressionante e com trilha poderosa. Temas como ecologia, política e religião são abordados com profundidade. A jornada de Paul é só o começo de algo maior. Um épico moderno de ficção científica. Denis Villeneuve entrega uma obra ambiciosa e imersiva.",
+        "sinopse": "Duna segue Paul Atreides, que chega a Arrakis, um planeta desértico crucial para a especiaria. Envolvido em traições e guerras, ele começa a ter visões de seu destino como líder dos Fremen. Com temas profundos de ecologia, política e religião, o filme é um épico visual e imersivo, marcando o início de uma jornada maior.",
         "categoria": ["Ficção Científica", "Aventura"],
         "diretor": "Denis Villeneuve",
         "data": "2021-10-22",
@@ -284,7 +284,7 @@ const dados = [
                 "descricao": "Cena mostrando o teste nuclear, representando as consequências devastadoras da invenção de Oppenheimer."
             }
         ],
-        "sinopse": "Baseado em fatos reais, o filme acompanha a vida de J. Robert Oppenheimer, físico teórico responsável pelo desenvolvimento da bomba atômica. A narrativa explora seus dilemas morais durante e após a Segunda Guerra Mundial. O projeto Manhattan é retratado com riqueza de detalhes. Oppenheimer lida com pressões políticas, éticas e pessoais. A direção de Nolan mistura presente, passado e flashbacks de forma inteligente. A atuação de Cillian Murphy dá profundidade ao personagem. A trilha sonora e o som impactam emocionalmente. O filme levanta questões sobre ciência, poder e responsabilidade. Um retrato complexo de um homem brilhante e atormentado. Uma das obras mais",
+        "sinopse": "Oppenheimer retrata a vida do físico J. Robert Oppenheimer, líder do projeto Manhattan, e seus dilemas morais ao criar a bomba atômica. Com direção de Nolan e uma atuação marcante de Cillian Murphy, o filme explora ciência, poder e responsabilidade, sendo uma reflexão profunda sobre um homem brilhante e atormentado.",
         "categoria": ["Drama", "História"],
         "diretor": "Christopher Nolan",
         "data": "2023-07-20",
@@ -313,7 +313,7 @@ const dados = [
                 "descricao": "Elenco do filme"
             }
         ],
-        "sinopse": "A franquia Velozes e Furiosos acompanha Dominic Toretto e sua equipe em missões eletrizantes envolvendo corridas ilegais, assaltos e espionagem internacional. Com cenas de ação cada vez mais intensas e improváveis, a saga evoluiu de rachas de rua para salvar o mundo, sempre destacando a importância da família. A adrenalina, os carros tunados e a lealdade entre os personagens são marcas registradas dessa franquia de sucesso global.",
+        "sinopse": "Velozes e Furiosos segue Dominic Toretto e sua equipe em missões de ação intensa, que evoluem de corridas de rua para salvar o mundo, sempre com foco na importância da família, carros potentes e lealdade entre os personagens.",
         "categoria": ["Ação", "Crime"],
         "diretor": "Rob Cohen",
         "data": "2001-06-22",
@@ -342,7 +342,7 @@ const dados = [
                 "descricao": "Uma imagem que captura a intensidade da batalha entre Luke e Vader, com sabres de luz em destaque."
             }
         ],
-        "sinopse": "Após a destruição da Estrela da Morte, o Império ataca os Rebeldes em seu esconderijo no planeta gelado Hoth. Enquanto Han Solo e Leia enfrentam perseguições, Luke Skywalker treina com o Mestre Yoda em Dagobah. No clímax, Luke confronta Darth Vader e descobre uma chocante verdade sobre sua origem. Considerado o melhor da saga, o filme aprofunda a mitologia de Star Wars com um tom mais sombrio e dramático.",
+        "sinopse": "O Império Contra-Ataca mostra os Rebeldes fugindo do Império, enquanto Luke descobre a verdade sobre sua origem ao confrontar Darth Vader. É o filme mais sombrio e profundo da saga Star Wars.",
         "categoria": ["Ficção Científica", "Aventura"],
         "diretor": "Irvin Kershner",
         "data": "1980-05-21",
@@ -371,7 +371,7 @@ const dados = [
                 "descricao": "Uma imagem que captura um momento marcante da dupla, refletindo a intensidade da trama."
             }
         ],
-        "sinopse": "Deadpool retorna com sua irreverência e quebra da quarta parede, desta vez acompanhado de Wolverine em uma aventura multiversal dentro do MCU. Com ação sangrenta, piadas ácidas e muito caos, os dois anti-heróis formam uma dupla inusitada para enfrentar ameaças que colocam realidades em risco. O filme promete unir o humor escrachado de Deadpool com a seriedade e brutalidade de Logan, em um encontro histórico para os fãs da Marvel.",
+        "sinopse": "Deadpool e Wolverine se unem em uma aventura multiversal no MCU, com ação sangrenta, piadas e caos. A dupla improvável enfrenta ameaças que podem destruir realidades, misturando o humor irreverente de Deadpool com a brutalidade de Logan.",
         "categoria": ["Ação", "Comédia"],
         "diretor": "Shawn Levy",
         "data": "2024-07-25",
