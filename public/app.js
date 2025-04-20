@@ -723,35 +723,46 @@ document.addEventListener('DOMContentLoaded', () => {
         divDeslogado.style.display = 'block';
         divLogado.style.display = 'none';
     }
-
-
     setupFiltro();
-    setupDetalhes();
-    carregaFilmes();
-    function configCarouselFilmesParaViewPort(){
-        btsCarouselPC = document.querySelectorAll('.bts-custom-carousel');
-        if(window.innerWidth >= 768){
-            btsCarouselPC.forEach((bt)=>{
-                bt.style.display = 'block';
-            });
-            if(window.innerWidth >= 992){
-                caroulselParaPC(6, 1);
-                caroulselParaPC(6, 2);
-            }else{
-                caroulselParaPC(3, 1);
-                caroulselParaPC(3, 2);
-            }
-        }else{
-            btsCarouselPC.forEach((bt)=>{
-                bt.style.display = 'none';
-            });
 
-        }
+    console.log(window.location.pathname);
+    if(window.location.pathname === "/public/"){
+        window.location.pathname = "/public/index.html";
     }
-    configCarouselFilmesParaViewPort();
-    window.addEventListener('resize', ()=>{
+    console.log(window.location.pathname.split('/').pop());
+    if(window.location.pathname.split('/').pop() === 'index.html'){
+        coisasDoIndexHTML();
+    }
+
+
+    function coisasDoIndexHTML(){
+        setupDetalhes();
+        carregaFilmes();
+        function configCarouselFilmesParaViewPort(){
+            btsCarouselPC = document.querySelectorAll('.bts-custom-carousel');
+            if(window.innerWidth >= 768){
+                btsCarouselPC.forEach((bt)=>{
+                    bt.style.display = 'block';
+                });
+                if(window.innerWidth >= 992){
+                    caroulselParaPC(6, 1);
+                    caroulselParaPC(6, 2);
+                }else{
+                    caroulselParaPC(3, 1);
+                    caroulselParaPC(3, 2);
+                }
+            }else{
+                btsCarouselPC.forEach((bt)=>{
+                    bt.style.display = 'none';
+                });
+            }
+        }
         configCarouselFilmesParaViewPort();
-    });
+        window.addEventListener('resize', ()=>{
+            configCarouselFilmesParaViewPort();
+        });
+    }
+    
     
     
 
@@ -1054,6 +1065,9 @@ function caroulselParaPC(itemsPerView, row){
     })
 
 }
+
+
+
 
 //funções reutilizaveis
 function abrirDropdown(dropdown) {

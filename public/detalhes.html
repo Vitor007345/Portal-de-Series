@@ -11,9 +11,101 @@
       crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="detalhes.css">
+    <script src="app.js"></script>
   
 </head>
 <body>
+  <header class="d-flex justify-content-between bg-dark align-items-center">
+
+    <img src="imgs/logo.png" alt="Logo-netflixo" class="logo">
+    <img src="imgs/logo-pequena.png" alt="" class="logo-pequena">
+    <nav class="search-bar">
+      <input type="text" name="" id="search-input" class="search-input" placeholder="Search...">
+      <button id="btsearch" class="btsearch"><i class="bi bi-search"></i></button>
+      <div class="div-filter">
+        <button id="btfilter" class="btfilter">
+          <i class="bi bi-funnel"></i>
+          <i class="bi bi-funnel-fill"></i>
+        </button>
+        <div id="filter-dropdown" class="dropdown">
+          <ul>
+            <li><input type="checkbox" id="input-acao"><label for="input-acao">Ação</label></li>
+            <li><input type="checkbox" id="input-aventura"><label for="input-aventura">Aventura</label>
+            </li>
+            <li><input type="checkbox" id="input-comedia"><label for="input-comedia">Comédia</label>
+            </li>
+            <li><input type="checkbox" id="input-drama"><label for="input-drama">Drama</label></li>
+            <li><input type="checkbox" id="input-animacao"><label for="input-animacao">Animação</label>
+            </li>
+            <li><input type="checkbox" id="input-romance"><label for="input-romance">Romance</label>
+            </li>
+            <li><input type="checkbox" id="input-terror"><label for="input-terror">Terror</label></li>
+            <li><input type="checkbox" id="input-suspense"><label for="input-suspense">Suspense</label>
+            </li>
+            <li><input type="checkbox" id="input-documentarios"><label for="input-documentarios">Documentários</label>
+            </li>
+            <li><input type="checkbox" id="input-ficcao"><label for="input-ficcao">Ficção
+                Científica</label>
+            </li>
+          </ul>
+        </div> <!--Fim dropdown-->
+      </div><!--Fim filter-dropdown-->
+    </nav> <!--Fim search-bar-->
+    <div class="user-info align-self-baseline">
+      <div class="not-logged">
+        <button class="btlogin">Login</button>
+        <button class="btsignup">Sign-up</button>
+      </div>
+      <div class="logged">
+        <span id="username">Username</span>
+        <img src="imgs/basicUser.png" alt="" id="userimg" class="userimg">
+      </div>
+
+    </div> <!--Fim user-info-->
+
+  </header>
+
+  <main>
+    <section class="infoGeralFilme">
+      <div class="conatiner-fluid">
+        <div class="row p-o m-0">
+          <div class="imgPrinciapal col-12 col-md-6 col-x1-4 p-0 m-0">
+            <img class="p-0 m-0" src="imgs/filmes/banners/jujutsu.jpg" alt="banner princiapal do filme">
+          </div><!--Fim-<div class="imgPrinciapal col-12 col-md-6 col-x1-4 p-0 m-0">-->
+          <div class="infos col-12 col-md-6 col-x1-8 p-3 pt-2">
+            <h3>Título</h3>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quibusdam, praesentium alias. Veniam dolorem autem dolor inventore odit tempore id, quod repellendus dolore molestias, minima reprehenderit nemo adipisci qui debitis. Pariatur excepturi cumque obcaecati repudiandae placeat assumenda expedita incidunt eligendi doloribus quo explicabo nesciunt earum possimus maiores voluptates officiis autem eveniet ea deserunt nam, sapiente adipisci in modi animi. Ipsum sint cupiditate, sed perspiciatis odio similique a in, aliquam laboriosam itaque nemo. Deserunt ut soluta eligendi quis labore ducimus, magnam explicabo pariatur dolorem et at vel nisi doloribus id illum reprehenderit earum suscipit, dolorum eum inventore. Commodi debitis illum inventore quidem!</p>
+            <div class="d-flex justify-content-between flex-wrap">
+              <div class="categoria d-flex">
+                <h5>Categoria: </h5>
+                <span id="categorias">categoria1, categoria2 e categoria 3</span>
+              </div> <!--Fim-<div class="categoria d-flex">-->
+              <div class="avaliacao d-flex">
+                <h5>Avaliação: </h5>
+                <span id="avaliacaoNum">5.0</span>
+                <span id="estrelasIcons">
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                </span>
+              </div> <!--Fim-<div class="avaliacao d-flex">-->
+            </div><!--Fim-<div class="d-flex justify-content-between flex-wrap">-->
+            <div class="trailer">
+              <iframe
+               src="https://www.youtube.com/embed/JfVOs4VSpmA?si=6MNSqcss1swUvdPY" 
+               title="YouTube video player" frameborder="0" 
+               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+               referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+          </div><!--Fim-<div class="infos col-12 col-md-6 col-x1-8 p-3 pt-2">-->
+        </div><!--Fim-<div class="row p-o m-0">-->
+      </div>
+    </section>
+    <section></section>
+  </main>
     
       
 </body>

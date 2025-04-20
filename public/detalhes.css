@@ -1,0 +1,50 @@
+/*formatação da img principal*/
+.imgPrinciapal > img{
+    max-width: 100vw;
+}
+.imgPrinciapal{
+    max-width: 100vw;
+}
+.infos{
+    max-width: 100vw;
+}
+@media screen and (min-width:768px){
+    .imgPrinciapal > img{
+        max-width: 50vw;
+    }
+    .imgPrinciapal{
+        max-width: 50vw;
+    }
+    .infos{
+        max-width: 50vw;
+    }
+}
+@media screen and (min-width:1200px){
+    .imgPrinciapal > img{
+        max-width: calc(100vw/3);
+    }
+    .imgPrinciapal{
+        max-width: calc(100vw/3);
+    }
+    .infos{
+        min-width: calc((200vw/3) - 17px); /*17px é o tamanho da scrollbar*/
+        max-width: calc((200vw/3));
+    }
+}
+
+/*Formatação trailer pra ter altura baseado no width*/
+.trailer{
+    position: relative;
+    width: 100%;
+    padding-top: 56.25%; /*proporção 16/9,  9/16 = 0,5625*/ /*padding em % é baseado no width*/
+    height: 0;
+    overflow: hidden;
+}
+.trailer iframe{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
