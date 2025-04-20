@@ -879,9 +879,9 @@ function setupDetalhes(){
     function carregaCliques(){
         for(let i = 0; i < numDestaques; i++){
             let idAtual = sequenciaDetalhes[i];
-            console.log(idAtual);
+            //console.log(idAtual);
             let infoAtual = dados.find((elem)=>elem.id == idAtual);
-            console.log(infoAtual.id);
+            //console.log(infoAtual.id);
             divCarouselItems.querySelectorAll('.carousel-item')[i].addEventListener('click',()=>{
                 console.log(infoAtual.id);
                 window.location.href = `detalhes.html?id=${infoAtual.id}`;
@@ -914,7 +914,7 @@ function carregaFilmes(){
         numPrimeiraRow = numPorRow + (dados.length % numDeRows);
     }
 
-    let ordemFilmes = randomSequence(1, dados.length);
+    let ordemFilmes = randomSequencePorDia(1, dados.length, 7);
 
     let sFilmes = document.getElementById('sectionFilmes');
     sFilmes.innerHTML = "";
@@ -943,6 +943,15 @@ function carregaFilmes(){
         }
     }
 
+    for(let i = 0; i < dados.length; i++){
+        console.log(document.getElementById(`filme${i}`));
+        document.getElementById(`filme${i}`).addEventListener('click', ()=>{
+            let idDoFilme = ordemFilmes[i];
+            console.log(`Entro nessa bagaça`);
+            window.location.href = `detalhes.html?id=${idDoFilme}`;
+        });
+    }
+
 }
 function newFrase(frase, sFilmes, row){
     sFilmes.innerHTML += `
@@ -959,7 +968,7 @@ function carregaOFilme(i, ordem, sFilmes, row){
     let infoFilme = dados.find((elem)=>elem.id == id);
     linha = sFilmes.querySelector(`#row${row}`);
     linha.innerHTML += `
-        <div class="filme col-6 col-md-4 col-lg-2">
+        <div id="filme${i}" class="filme col-6 col-md-4 col-lg-2">
           <div class="conteudo">
             <h4 class="titulo">${(!infoFilme.subtitulo? infoFilme.titulo: infoFilme.titulo + "&nbsp;" + infoFilme.subtitulo)}</h4>
             <p class="sinopse">${infoFilme.sinopse}</p>
