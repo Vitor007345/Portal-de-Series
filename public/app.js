@@ -728,8 +728,6 @@ document.addEventListener('DOMContentLoaded', () => {
     setupFiltro();
     setupDetalhes();
     carregaFilmes();
-
-
     function configCarouselFilmesParaViewPort(){
         btsCarouselPC = document.querySelectorAll('.bts-custom-carousel');
         if(window.innerWidth >= 768){
@@ -750,13 +748,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
         }
     }
-
     configCarouselFilmesParaViewPort();
-    
-
     window.addEventListener('resize', ()=>{
         configCarouselFilmesParaViewPort();
-    })
+    });
     
     
 
@@ -822,7 +817,7 @@ function setupFiltro() {
 function setupDetalhes(){
     let numDestaques = randomPorDia(3, 6, 0); //um número de destques aleatorio de 3 a 6, diferente a cada dia
     let divBtCarousel = document.querySelector('.destaques .carousel-indicators');
-    let divCarouselItem = document.querySelector('.destaques .carousel-inner');
+    let divCarouselItems = document.querySelector('.destaques .carousel-inner');
     let sequenciaDetalhes = randomSequencePorDia(1, dados.length, 1).slice(0, numDestaques); //cria uma sequencia com numero de destaques como tamanho, podendo ter número de 1 ao max dos dados, ela é diferente a cada dia
 
     //seta o primeiro botão e slide como active
@@ -835,7 +830,7 @@ function setupDetalhes(){
         <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
     `;
 
-    divCarouselItem.innerHTML = `
+    divCarouselItems.innerHTML = `
         <div class="carousel-item active">
 
             <div class="carousel-img-div">
@@ -850,6 +845,7 @@ function setupDetalhes(){
         </div>
 
     `;
+
     
     //seta o resto normal sem o active
     
@@ -861,25 +857,41 @@ function setupDetalhes(){
         id = sequenciaDetalhes[i];
         info = dados.find((elem)=>elem.id == id);
 
-        divCarouselItem.innerHTML += `
-        <div class="carousel-item">
+        divCarouselItems.innerHTML += `
+            <div class="carousel-item">
 
-            <div class="carousel-img-div">
-                <div class="degrade"></div>
-                <img src="${info.imgPrinciapl}" class="d-block w-100 custom-img-carousel" alt="...">
-            </div>
+                <div class="carousel-img-div">
+                    <div class="degrade"></div>
+                    <img src="${info.imgPrinciapl}" class="d-block w-100 custom-img-carousel" alt="...">
+                </div>
                     
-            <div class="carousel-caption d-none d-md-block custom-caption">
-                <h5>${(!info.subtitulo)?info.titulo:info.titulo + "&nbsp;" + info.subtitulo}</h5>
-                <p>${info.sinopse}</p>
+                <div class="carousel-caption d-none d-md-block custom-caption">
+                    <h5>${(!info.subtitulo)?info.titulo:info.titulo + "&nbsp;" + info.subtitulo}</h5>
+                    <p>${info.sinopse}</p>
+                </div>
             </div>
-        </div>
 
-    `;
-
-
+            `;
     }
 
+
+    
+    function carregaCliques(){
+        for(let i = 0; i < numDestaques; i++){
+            let idAtual = sequenciaDetalhes[i];
+            console.log(idAtual);
+            let infoAtual = dados.find((elem)=>elem.id == idAtual);
+            console.log(infoAtual.id);
+            divCarouselItems.querySelectorAll('.carousel-item')[i].addEventListener('click',()=>{
+                console.log(infoAtual.id);
+                window.location.href = `detalhes.html?id=${infoAtual.id}`;
+                
+            });
+            console.log(divCarouselItems.querySelectorAll('.carousel-item')[i]);
+        }
+    }
+    carregaCliques();
+    
     
 }
 
