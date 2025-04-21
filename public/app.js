@@ -1096,21 +1096,29 @@ function caroulselParaPC(itemsPerView, row){
     //console.log(totalItems);
 
 
-    function updateCarousel() {
+    function updateCarousel(resize = false) {
         const itemWidth = items[0].offsetWidth;
-        track.scrollLeft = currentIndex * itemWidth;
-        prevBtn.style.left = `${currentIndex * itemWidth}px`;
-        nextBtn.style.right = `-${currentIndex * itemWidth}px`;
+        const tempo = 200;
+        if(resize){
+            track.scrollLeft = currentIndex * itemWidth;
+        }else{
+            scrollAnimadoEase(track, track.scrollLeft, currentIndex * itemWidth, tempo, 1000);
+        }
+        setTimeout(()=>{
+            prevBtn.style.left = `${currentIndex * itemWidth}px`;
+            nextBtn.style.right = `-${currentIndex * itemWidth}px`;
+        },tempo);
+        
 
         if((currentIndex + itemsPerView) === totalItems){
             nextBtn.style.display = 'none';
         }else{
-            nextBtn.style.display = 'block';
+            setTimeout(()=>{nextBtn.style.display = 'block';},tempo);
         }
         if(currentIndex === 0){
             prevBtn.style.display = 'none';
         }else{
-            prevBtn.style.display = 'block';
+            setTimeout(()=>{prevBtn.style.display = 'block';},tempo);
         }
         //console.log(currentIndex);
     }
@@ -1139,7 +1147,7 @@ function caroulselParaPC(itemsPerView, row){
 
     window.addEventListener('resize', ()=>{
         if(window.innerWidth >= 768){
-            updateCarousel();
+            updateCarousel(true);
         }
     })
 
@@ -1336,5 +1344,22 @@ function randomSequencePorDia(min, max, index){
         
     }
     return sequencia;
+}
+
+function scrollAnimadoEase(elem, posInicial, posFinal, tempo = 500, passos = 100){
+    let deslocamento = posFinal - posInicial;
+    //let incremento = deslocamento/passos;
+    for(let i = 0; i <= passos; i++){
+        setTimeout(()=>{
+            elem.scrollLeft = posInicial + (ease(i)*deslocamento);
+        }, i * (tempo/passos));
+    }
+
+
+    function ease(n){
+        let x = n/passos; //divide pelos passos pra conseguir um número entre 0 e 1, pois ao elavar a 2 um numero assim, os menores se tornam ainda menores e os maiores ainda maiores
+        return x*x;
+    }
+
 }
 
