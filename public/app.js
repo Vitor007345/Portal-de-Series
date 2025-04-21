@@ -785,6 +785,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     function coisasdoDetalhesHTML(){
         carregaDadosPincipaisDetalhes();
+        carregaEpsOuFotos();
     }
     
     
@@ -1146,11 +1147,15 @@ function caroulselParaPC(itemsPerView, row){
 
 //funções setup do detalhes
 
-function carregaDadosPincipaisDetalhes(){
+function getDadosLocais(){
     let params = new URLSearchParams(window.location.search);
     let id = params.get('id'); //console.log(id);
+    return dados.find((elem)=>elem.id == id);
+}
 
-    let infoFilme = dados.find((elem)=>elem.id == id); //console.log(infoFilme);
+function carregaDadosPincipaisDetalhes(){
+
+    let infoFilme = getDadosLocais();
     
     let banner = document.getElementById('banner'); //console.log(banner);
     let titulo = document.getElementById('titulo'); //console.log(titulo);
@@ -1187,6 +1192,45 @@ function carregaDadosPincipaisDetalhes(){
     
     
     
+}
+function carregaEpsOuFotos(){
+    let infoFilme = getDadosLocais();
+    let h3epsOuCenas = document.getElementById('h3epsOuCenas');  console.log(h3epsOuCenas);
+    let divEpsOuCenas = document.getElementById('fotosDoItem');
+    divEpsOuCenas.innerHTML = "";
+    if(infoFilme.class === "filme"){
+        h3epsOuCenas.innerText = "Cenas Marcantes";
+        infoFilme.imgsComplementares.forEach((cena)=>{
+            divEpsOuCenas.innerHTML += `
+                <div class="card" style="width: 18rem;">
+                    <img class="card-img-top" src="${cena.src}" alt="Card image cap">
+                    <div class="card-body">
+                        <p class="card-text">${cena.descricao}</p>
+                    </div>
+                </div>
+            `;
+        });
+        divEpsOuCenas.querySelectorAll(':scope > *').forEach((elem)=>{
+            elem.style.flex = '1 1 18rem';
+        });
+    }else if(infoFilme.class === "serie"){
+        h3epsOuCenas.innerText = "Episódios";
+        infoFilme.episodios.forEach((ep)=>{
+            divEpsOuCenas.innerHTML += `
+                <div class="card" style="width: 18rem;">
+                    <img class="card-img-top" src="${ep.src}" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">${ep.titulo}</h5>
+                        <p class="card-text">${ep.sinopse}</p>
+                    </div>
+                </div>
+            `;
+        });
+    }else{
+        console.log(`classe do filme ${infoFilme.titulo} de id ${infoFilme.id} invalida, ela deve ser apenas filme ou serie`);
+        alert('Erro no carregamento dos episodios ou cenas marcantes');
+    }
+        
 }
 
 
