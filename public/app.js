@@ -22,6 +22,7 @@ const dados = [
             }
         ],
         "sinopse": "A história mostra a ascensão de Michael Corleone ao comando da máfia após um ataque ao seu pai, Don Vito. O filme explora poder, lealdade e corrupção, sendo um marco do cinema.",
+        "sinopseGrande": "Em meio ao casamento de sua filha, Don Vito Corleone comanda silenciosamente os bastidores do submundo, ouvindo pedidos de favores com a autoridade de um verdadeiro patriarca. Após um atentado contra sua vida, seu filho Michael, inicialmente relutante, mergulha no mundo da máfia, revelando-se um líder implacável e estratégico. ",
         "categoria": ["Drama", "Crime"],
         "diretor": "Francis Ford Coppola",
         "data": "1972-03-24",
@@ -51,6 +52,7 @@ const dados = [
             }
         ],
         "sinopse": "Matrix conta a jornada de Neo, um hacker que descobre viver numa simulação controlada por máquinas. Ao ser chamado a libertar a humanidade, ele enfrenta questões filosóficas e desafia a realidade. O filme revolucionou o cinema com seus efeitos e permanece influente até hoje.",
+        "sinopseGrande": "Matrix acompanha a jornada de Neo, um hacker comum que descobre que sua realidade é, na verdade, uma simulação digital criada por máquinas para controlar a humanidade. Ao ser recrutado por um grupo de rebeldes liderado por Morpheus, Neo é desafiado a libertar a raça humana e a questionar as próprias noções de realidade, livre-arbítrio e identidade. No processo, ele enfrenta dilemas filosóficos profundos e se vê no centro de uma batalha épica entre humanos e máquinas. Com efeitos visuais inovadores e uma narrativa que mescla ação e filosofia, o filme se tornou um marco do cinema moderno e continua a influenciar a cultura pop até hoje.",
         "categoria": ["Ação", "Ficção Científica"],
         "diretor": "Lana e Lilly Wachowski",
         "data": "1999-03-31",
@@ -80,6 +82,7 @@ const dados = [
             }
         ],
         "sinopse": "Interestelar acompanha a jornada de Cooper, que parte em busca de um novo lar para a humanidade enquanto enfrenta os limites do tempo e do espaço. Combinando ciência e drama familiar, o filme é uma reflexão profunda sobre amor, existência e o futuro da humanidade.",
+        "sinopseGrande": "Interestelar segue a jornada de Cooper, um piloto e engenheiro que é recrutado para uma missão espacial com o objetivo de encontrar um novo lar para a humanidade, enquanto a Terra enfrenta um futuro incerto devido à escassez de recursos. Em uma travessia pelos confins do universo, Cooper e sua equipe enfrentam os limites do tempo, da gravidade e do espaço, descobrindo a complexidade das leis físicas. O filme, que mistura ficção científica com um poderoso drama familiar, aborda temas profundos como o amor, a existência humana e o destino da raça humana, oferecendo uma reflexão sobre nossa capacidade de perseverar diante do desconhecido.",
         "categoria": ["Ficção Científica", "Drama"],
         "diretor": "Christopher Nolan",
         "data": "2014-11-07",
@@ -109,6 +112,7 @@ const dados = [
             }
         ],
         "sinopse": "Vingadores: Ultimato mostra os heróis tentando reverter o estalo de Thanos com uma missão no tempo. Cheio de ação, sacrifícios e emoção, o filme encerra uma era do MCU de forma épica e memorável, sendo um marco no cinema de super-heróis.",
+        "sinopseGrande": "Vingadores: Ultimato segue os heróis do MCU em uma missão desesperada para reverter o devastador estalo de Thanos, que apagou metade da vida no universo. Usando viagens no tempo, os Vingadores tentam reunir as Joias do Infinito e restaurar o equilíbrio, enfrentando desafios imensos e fazendo sacrifícios pessoais. Cheio de ação intensa, momentos emocionantes e reviravoltas dramáticas, o filme não só conclui a saga de forma épica, mas também marca o fim de uma era no Universo Cinematográfico Marvel. Com sua grandiosidade e impacto, Ultimato se tornou um marco no cinema de super-heróis, encerrando um capítulo inesquecível da história do cinema.",
         "categoria": ["Ação", "Aventura"],
         "diretor": "Anthony e Joe Russo",
         "data": "2019-04-26",
@@ -138,6 +142,7 @@ const dados = [
             }
         ],
         "sinopse": "Joker acompanha a transformação de Arthur Fleck, um homem marginalizado, em Coringa, símbolo do caos. O filme é um estudo sombrio sobre saúde mental e exclusão social, com atuação marcante de Joaquin Phoenix e uma atmosfera intensa e provocadora.",
+        "sinopseGrande": "Joker narra a trágica transformação de Arthur Fleck, um comediante marginalizado e atormentado pela sociedade, que, após uma série de eventos devastadores, se torna o vilão Coringa, um símbolo do caos e da revolta. O filme mergulha em um estudo sombrio sobre saúde mental, exclusão social e os efeitos da negligência institucional. A atuação marcante de Joaquin Phoenix traz profundidade à personagem, criando uma figura complexa e perturbadora. Com uma atmosfera intensa e provocadora, Joker oferece uma reflexão inquietante sobre a fragilidade humana, os limites da sanidade e as consequências de uma sociedade indiferente.",
         "categoria": ["Drama", "Suspense"],
         "diretor": "Todd Phillips",
         "data": "2019-10-04",
@@ -167,6 +172,7 @@ const dados = [
             }
         ],
         "sinopse": "Pantera Negra segue T'Challa, que luta pelo trono de Wakanda contra Killmonger, num confronto entre tradição e mudança. O filme é um marco cultural que mistura ação, identidade africana e temas como justiça e legado, sendo um dos mais impactantes do MCU.",
+        "sinopseGrande": "Pantera Negra acompanha T'Challa, o recém-coroado rei de Wakanda, que precisa lutar pelo trono contra Erik Killmonger, um inimigo com um passado ligado à história de Wakanda e que desafia suas crenças sobre o futuro do reino. O filme explora um confronto entre tradição e mudança, abordando questões de justiça, identidade africana e legado. Com uma narrativa que vai além da ação, Pantera Negra é um marco cultural, celebrando a diversidade e trazendo à tona debates sobre empoderamento, responsabilidade e a conexão com as raízes. Seu impacto no MCU e na cultura pop foi imenso, fazendo história no cinema.",
         "categoria": ["Ação", "Ficção Científica"],
         "diretor": "Ryan Coogler",
         "data": "2018-02-16",
@@ -196,6 +202,7 @@ const dados = [
             }
         ],
         "sinopse": "Parasita mostra a família Kim infiltrando-se na casa dos ricos Park, revelando aos poucos tensões e segredos. Com humor, suspense e crítica social, o filme expõe a desigualdade com maestria. Uma obra-prima que fez história ao vencer o Oscar de Melhor Filme.",
+        "sinopseGrande": "Parasita narra a história da família Kim, que, devido à sua situação financeira precária, começa a se infiltrar na vida da rica família Park, conquistando posições na casa deles de maneira disfarçada. À medida que a trama se desenrola, tensões, segredos e conflitos entre as classes sociais vão emergindo, criando um ambiente de crescente suspense e intriga. Com uma mistura de humor negro e crítica social, o filme expõe de forma brilhante a desigualdade e a luta de classes. Uma obra-prima do diretor Bong Joon-ho, Parasita fez história ao se tornar o primeiro filme em língua não inglesa a vencer o Oscar de Melhor Filme, conquistando reconhecimento mundial.",
         "categoria": ["Drama", "Suspense"],
         "diretor": "Bong Joon-ho",
         "data": "2019-05-30",
@@ -227,6 +234,7 @@ const dados = [
 
         ],
         "sinopse": "Spider-Man: Sem Volta Para Casa segue Peter Parker tentando corrigir os problemas causados pela revelação de sua identidade, com a ajuda do Doutor Estranho. O feitiço errado traz heróis e vilões de universos paralelos, culminando em uma reunião épica dos três Homens-Aranha.",
+        "sinopseGrande": "Spider-Man: Sem Volta Para Casa acompanha Peter Parker, que, tentando corrigir os danos causados pela revelação pública de sua identidade, recorre à ajuda do Doutor Estranho. No entanto, um feitiço errado abre portais para universos paralelos, trazendo heróis e vilões de outras realidades. O filme culmina em um momento épico, com a reunião dos três Homens-Aranha de diferentes dimensões, unindo Tom Holland, Tobey Maguire e Andrew Garfield para enfrentar ameaças que vão além do esperado. Com ação, emoção e fanservice, *Sem Volta Para Casa* se torna uma celebração histórica do legado do Homem-Aranha no cinema.",
         "categoria": ["Ação", "Aventura"],
         "diretor": "Jon Watts",
         "data": "2021-12-17",
@@ -256,6 +264,7 @@ const dados = [
             }
         ],
         "sinopse": "Duna segue Paul Atreides, que chega a Arrakis, um planeta desértico crucial para a especiaria. Envolvido em traições e guerras, ele começa a ter visões de seu destino como líder dos Fremen. Com temas profundos de ecologia, política e religião, o filme é um épico visual e imersivo, marcando o início de uma jornada maior.",
+        "sinopseGrande": "Duna segue Paul Atreides, um jovem que chega ao planeta Arrakis, um deserto árido e estratégico, fonte da especiaria melange, a substância mais valiosa do universo. Quando sua família é traída e envolvida em uma luta pelo controle do planeta, Paul começa a ter visões sobre seu destino como líder dos Fremen, uma tribo nativa de Arrakis. Com uma narrativa complexa que explora temas profundos de ecologia, política, religião e poder, o filme se destaca como um épico visualmente deslumbrante e imersivo. Dirigido por Denis Villeneuve, Duna marca o início de uma jornada maior, prometendo expandir ainda mais o universo de Frank Herbert.",
         "categoria": ["Ficção Científica", "Aventura"],
         "diretor": "Denis Villeneuve",
         "data": "2021-10-22",
@@ -285,6 +294,7 @@ const dados = [
             }
         ],
         "sinopse": "Oppenheimer retrata a vida do físico J. Robert Oppenheimer, líder do projeto Manhattan, e seus dilemas morais ao criar a bomba atômica. Com direção de Nolan e uma atuação marcante de Cillian Murphy, o filme explora ciência, poder e responsabilidade, sendo uma reflexão profunda sobre um homem brilhante e atormentado.",
+        "sinopseGrande": "Oppenheimer narra a vida de J. Robert Oppenheimer, o físico que liderou o Projeto Manhattan e foi responsável pela criação da bomba atômica durante a Segunda Guerra Mundial. O filme explora os dilemas morais e existenciais enfrentados por Oppenheimer enquanto ele lida com o peso da ciência que transformou a guerra e o destino da humanidade. Dirigido por Christopher Nolan, a obra combina uma narrativa intensa e profunda, com uma atuação marcante de Cillian Murphy no papel principal. Oppenheimer é uma reflexão sobre o poder da ciência, a responsabilidade de suas descobertas e os conflitos internos de um homem brilhante, mas atormentado por suas escolhas.",
         "categoria": ["Drama", "História"],
         "diretor": "Christopher Nolan",
         "data": "2023-07-20",
@@ -314,6 +324,7 @@ const dados = [
             }
         ],
         "sinopse": "Velozes e Furiosos segue Dominic Toretto e sua equipe em missões de ação intensa, que evoluem de corridas de rua para salvar o mundo, sempre com foco na importância da família, carros potentes e lealdade entre os personagens.",
+        "sinopseGrande": "Velozes e Furiosos acompanha Dominic Toretto e sua equipe em uma série de missões cada vez mais intensas, que começam com corridas de rua e evoluem para salvar o mundo em situações de alto risco. O filme combina ação de tirar o fôlego, perseguições emocionantes e carros potentes, sempre com o tema central da família, lealdade e amizade entre os personagens. Ao longo da saga, a equipe de Toretto enfrenta desafios e inimigos poderosos, mantendo a conexão familiar como sua principal força. Uma franquia icônica que mistura adrenalina e valores humanos em cada nova aventura, mantendo o público cativado com cada lançamento.",
         "categoria": ["Ação", "Crime"],
         "diretor": "Rob Cohen",
         "data": "2001-06-22",
@@ -343,6 +354,7 @@ const dados = [
             }
         ],
         "sinopse": "O Império Contra-Ataca mostra os Rebeldes fugindo do Império, enquanto Luke descobre a verdade sobre sua origem ao confrontar Darth Vader. É o filme mais sombrio e profundo da saga Star Wars.",
+        "sinopseGrande": "O Império Contra-Ataca segue a aliança Rebelde enquanto tenta escapar das forças implacáveis do Império, após a destruição da Estrela da Morte. Enquanto isso, Luke Skywalker inicia seu treinamento com o Mestre Yoda e, ao confrontar Darth Vader, descobre a chocante verdade sobre sua origem. Considerado o filme mais sombrio e profundo da saga Star Wars, O Império Contra-Ataca explora temas de sacrifício, identidade e destino, elevando a franquia a um novo nível emocional e narrativo. Com cenas icônicas e reviravoltas inesperadas, o filme se consolidou como um marco no cinema e na cultura pop.",
         "categoria": ["Ficção Científica", "Aventura"],
         "diretor": "Irvin Kershner",
         "data": "1980-05-21",
@@ -372,6 +384,7 @@ const dados = [
             }
         ],
         "sinopse": "Deadpool e Wolverine se unem em uma aventura multiversal no MCU, com ação sangrenta, piadas e caos. A dupla improvável enfrenta ameaças que podem destruir realidades, misturando o humor irreverente de Deadpool com a brutalidade de Logan.",
+        "sinopseGrande": "Deadpool 3 traz uma parceria improvável entre Deadpool e Wolverine, que se unem em uma aventura multiversal dentro do MCU. Em meio a muita ação sangrenta, piadas irreverentes e caos absoluto, a dupla enfrenta ameaças que podem destruir realidades inteiras. O humor irreverente e sarcástico de Deadpool se mistura com a brutalidade e o peso emocional de Logan, criando uma dinâmica única e cheia de tensão. Com cenas de ação explosivas e diálogos afiados, o filme promete explorar o melhor dos dois personagens, mantendo o tom irreverente e ousado, enquanto adiciona uma nova camada ao universo expandido da Marvel.",
         "categoria": ["Ação", "Comédia"],
         "diretor": "Shawn Levy",
         "data": "2024-07-25",
@@ -440,6 +453,7 @@ const dados = [
             }
         ],
         "sinopse": "Em meio a uma revolução tecnológica e conflitos sociais, duas irmãs acabam em lados opostos de uma guerra entre as cidades-estado de Piltover e Zaun. Inspirada no universo de League of Legends.",
+        "sinopseGrande": "Arcane se passa em um mundo marcado por uma revolução tecnológica e intensos conflitos sociais entre as cidades-estado de Piltover e Zaun. A história segue duas irmãs, Vi e Jinx, que, devido às tensões políticas e sociais, acabam encontrando-se em lados opostos de uma guerra devastadora. Enquanto Piltover representa o avanço e o poder, Zaun é uma cidade de desigualdade e caos, onde os laços familiares e os sentimentos pessoais são testados. Inspirada no universo de League of Legends, a série explora temas de poder, lealdade e identidade, trazendo uma narrativa profunda e visualmente deslumbrante, que mistura ação e drama de forma envolvente.",
         "categoria": ["Animação", "Ação", "Drama", "Fantasia", "Ficção Científica"],
         "diretor": "Pascal Charrue, Arnaud Delord",
         "data": "6 de novembro de 2021",
@@ -526,6 +540,7 @@ const dados = [
           }
         ],
         "sinopse": "Yuji Itadori, um estudante do ensino médio com habilidades físicas excepcionais, se envolve no mundo das maldições após ingerir um objeto amaldiçoado para salvar seus amigos.",
+        "sinopseGrande": "Jujutsu Kaisen segue Yuji Itadori, um estudante do ensino médio com habilidades físicas excepcionais, que acaba sendo arrastado para o mundo das maldições quando ingere um objeto amaldiçoado, um dos dedos de Ryomen Sukuna, para salvar seus amigos. Ao fazer isso, Yuji se torna o hospedeiro de Sukuna, um dos espíritos amaldiçoados mais poderosos e perigosos. Agora, ele precisa aprender a controlar essa força demoníaca enquanto se junta a outros estudantes e feiticeiros jujutsu para combater maldições e proteger o mundo dos espíritos malignos. A série mistura ação intensa, humor e uma trama cheia de mistério e superação.",
         "categoria": ["Ação", "Aventura", "Fantasia", "Luta", "Sobrenatural"],
         "diretor": "Sunghoo Park",
         "data": "2020",
@@ -612,6 +627,7 @@ const dados = [
           }
         ],
         "sinopse": "Em um mundo onde a humanidade vive cercada por muralhas para se proteger dos titãs, Eren Yeager e seus amigos se alistam no Exército após um ataque devastador que destrói sua cidade natal.",
+        "sinopseGrande": "Attack on Titan se passa em um mundo onde a humanidade vive cercada por imponentes muralhas para se proteger dos titãs, criaturas gigantescas que ameaçam a sobrevivência da raça humana. Após um ataque devastador que destrói sua cidade natal e resulta na morte de sua mãe, Eren Yeager, junto de seus amigos Mikasa e Armin, se alistam no Exército com o objetivo de combater os titãs e vingar a perda que sofreram. Ao longo da trama, os três enfrentam desafios intensos, descobrem segredos obscuros sobre a origem dos titãs e o verdadeiro propósito das muralhas, enquanto lidam com questões de sobrevivência, lealdade e identidade. A série combina ação épica com uma narrativa profunda e cheia de reviravoltas.",
         "categoria": ["Ação", "Drama", "Fantasia", "Mistério", "Suspense"],
         "diretor": "Tetsurō Araki",
         "data": "2013",
@@ -698,6 +714,7 @@ const dados = [
           }
         ],
         "sinopse": "Após a morte de seu companheiro herói, Frieren, uma elfa imortal, começa uma jornada solo para entender o valor da vida e os laços que formou ao longo do tempo.",
+        "sinopseGrande": "Frieren: A Última Jornada segue Frieren, uma elfa imortal que, após a morte de seu companheiro de aventuras Himmel, um herói que derrotou o Senhor Demoníaco, começa uma jornada solo em busca de autocompreensão. Ao longo de sua viagem, Frieren reflete sobre os laços que formou durante sua longa vida, especialmente com Himmel e seus outros companheiros de jornada, enquanto percebe a efemeridade da vida humana. A série aborda temas de amizade, perda e o valor do tempo, explorando como a imortalidade de Frieren a distancia de uma compreensão mais profunda dos sentimentos humanos. Com uma narrativa sensível e introspectiva, Frieren é uma história comovente sobre o significado de viver e as conexões que nos definem.",
         "categoria": ["Ação", "Aventura", "Fantasia", "Drama", "Sobrenatural"],
         "diretor": "Masato Jinbo",
         "data": "2023",
@@ -734,6 +751,8 @@ document.addEventListener('DOMContentLoaded', () => {
     console.log(window.location.pathname.split('/').pop());
     if(window.location.pathname.split('/').pop() === 'index.html'){
         coisasDoIndexHTML();
+    }else if(window.location.pathname.split('/').pop() === 'detalhes.html'){
+        coisasdoDetalhesHTML();
     }
 
 
@@ -764,6 +783,9 @@ document.addEventListener('DOMContentLoaded', () => {
             configCarouselFilmesParaViewPort();
         });
     }
+    function coisasdoDetalhesHTML(){
+        carregaDadosPincipaisDetalhes();
+    }
     
     
     
@@ -771,7 +793,7 @@ document.addEventListener('DOMContentLoaded', () => {
 })
 
 
-//funções setup
+//funções setup gerais
 function setupFiltro() {
 
     //variaveis e constantes
@@ -880,6 +902,7 @@ function setupSidebar(){
 }
 
 
+//funções setup do index.html
 function setupDetalhes(){
     let numDestaques = randomPorDia(3, 6, 0); //um número de destques aleatorio de 3 a 6, diferente a cada dia
     let divBtCarousel = document.querySelector('.destaques .carousel-indicators');
@@ -1119,6 +1142,44 @@ function caroulselParaPC(itemsPerView, row){
         }
     })
 
+}
+
+//funções setup do detalhes
+
+function carregaDadosPincipaisDetalhes(){
+    let params = new URLSearchParams(window.location.search);
+    let id = params.get('id'); //console.log(id);
+
+    let infoFilme = dados.find((elem)=>elem.id == id); //console.log(infoFilme);
+    
+    let banner = document.getElementById('banner'); //console.log(banner);
+    let titulo = document.getElementById('titulo'); //console.log(titulo);
+    let sinopse = document.getElementById('sinopse'); //console.log(sinopse);
+    let categorias = document.getElementById('categorias'); //console.log(categorias);
+    let avaliacaoNum = document.getElementById('avaliacaoNum'); //console.log(avaliacaoNum);
+    let spanEstrelas = document.getElementById('estrelasIcons'); //console.log(spanEstrelas);
+    let iframeTrailer = document.getElementById('iframeTrailer'); //console.log(iframeTrailer);
+
+    banner.src = infoFilme.imgPrinciapl;
+    titulo.innerText = (!infoFilme.subtitulo)? infoFilme.titulo: infoFilme.titulo + " " + infoFilme.subtitulo;
+    sinopse.innerText = infoFilme.sinopseGrande;
+    categorias.innerHTML = "";
+    infoFilme.categoria.forEach((elem, i, categoria)=>{
+        categorias.innerHTML += elem;
+        if(i<(categoria.length - 2)){
+            categorias.innerHTML += ",&nbsp;";
+        }else if(i == (categoria.length - 2)){
+            categorias.innerHTML += "&nbsp;e&nbsp;";
+        }
+    })
+
+    
+    
+    
+    
+    
+    
+    
 }
 
 
