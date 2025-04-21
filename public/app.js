@@ -1064,9 +1064,9 @@ function carregaOFilme(i, ordem, sFilmes, row){
             <p class="sinopse">${infoFilme.sinopse}</p>
             <div class="botoes">
               <ul>
-                <li><a href=""><i class="bi bi-play"></i></a></li>
-                <li><a href=""><i class="bi bi-bookmark"></i></a></li>
-                <li><a href=""><i class="bi bi-hand-thumbs-up"></i></a></li>
+                <li class="position-relative"><a href="detalhes.html?id=${infoFilme.id}#iframeTrailer"><i class="bi bi-play"></i><div class="tooltip position-absolute start-50 bg-dark">Assista o Trailer</div></a></li>
+                <li class="position-relative"><a href=""><i class="bi bi-bookmark"></i><div class="tooltip position-absolute start-50 bg-dark">Salve para assistir depois</div></a></li>
+                <li class="position-relative"><a href=""><i class="bi bi-hand-thumbs-up"></i><div class="tooltip position-absolute start-50 bg-dark">Avalie</div></a></li>
               </ul>
             </div>
           </div>

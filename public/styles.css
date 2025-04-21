@@ -313,6 +313,7 @@ body{
         display: inline-block;
         width:fit-content;
         z-index: 10;
+        transform: translateY(-50%);
 
     }
     .prev {
@@ -394,4 +395,22 @@ footer .row{
 #username, #userimg{
     position: relative;
     z-index: 21;
+}
+
+/*Formatação da tooltip*/
+.tooltip{
+    display: none;
+    transform: translateX(-50%);
+    color: white;
+    width: fit-content;
+    bottom: 100%;
+    pointer-events: auto;
+    opacity: 100%; /*botei essa merda desgraçada pq alguma merda botou essa dregraça com opacity 0 e nem a IA do inspecionar q analisou os códigos achou oq fez isso, só disse q era esse o problema, pelo menos resolveu*/
+    padding: .5rem;
+    text-align: center;
+    border-radius: .8rem;
+}
+
+.filme:hover .botoes ul li:hover .tooltip{
+    display: block;
 }
