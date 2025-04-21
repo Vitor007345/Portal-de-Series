@@ -1098,11 +1098,11 @@ function caroulselParaPC(itemsPerView, row){
 
     function updateCarousel(resize = false) {
         const itemWidth = items[0].offsetWidth;
-        const tempo = 200;
+        const tempo = 250;
         if(resize){
             track.scrollLeft = currentIndex * itemWidth;
         }else{
-            scrollAnimadoEase(track, track.scrollLeft, currentIndex * itemWidth, tempo, 1000);
+            scrollAnimadoEase(track, track.scrollLeft, currentIndex * itemWidth, tempo, 2000);
         }
         setTimeout(()=>{
             prevBtn.style.left = `${currentIndex * itemWidth}px`;
