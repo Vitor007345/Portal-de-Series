@@ -93,6 +93,9 @@ body{
     }
     #username{
         display: none;
+        position:absolute !important;
+        right: 55px;
+
     }
     .search-input{
         width: 45vw;
@@ -342,4 +345,45 @@ footer .row{
     footer .row{
         flex-direction: row;
     }
+}
+
+
+/*Formatação da sidebar*/
+.sidebar *{
+    /*display:none;*/
+}
+.sidebar{
+    display: block;
+    width:200px;
+    height: 100vh;
+    z-index: 20;
+    background-color: black;
+    -webkit-transition: width 0.3s ease;
+     -moz-transition: width 0.3s ease;
+       -o-transition: width 0.3s ease;
+          transition: width 0.3s ease;
+}
+.menu{
+    margin-top: 90px; 
+}
+.menu ul{
+    list-style: none;
+    padding-left: 0;
+}
+.menu ul li{
+    width: 100%;
+    overflow: hidden;
+}
+.menu ul li a{
+    display: block;
+    width: 100%;
+    color: white;
+    text-decoration: none;
+    font-size: 125%;
+    padding: .7rem; 
+    padding-left: 1.2rem;
+}
+#username, #userimg{
+    position: relative;
+    z-index: 21;
 }

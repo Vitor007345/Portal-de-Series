@@ -724,6 +724,8 @@ document.addEventListener('DOMContentLoaded', () => {
         divLogado.style.display = 'none';
     }
     setupFiltro();
+    setupSidebar();
+    
 
     console.log(window.location.pathname);
     if(window.location.pathname === "/public/"){
@@ -825,6 +827,59 @@ function setupFiltro() {
         trocarComponente1por2(filtroPrenchido, filtroVazio);
     }
 }
+
+function setupSidebar(){
+    let imgPerfil = document.getElementById('userimg');
+    let username = document.getElementById('username');
+    let sidebar = document.getElementById('sidebar-menu');
+    let body = document.querySelector('body');
+    let sidebarAberto = false;
+    let displayElementos = [];
+    fecharSidebar();
+    //console.log(displayElementos);
+    
+    imgPerfil.addEventListener('click', ()=>{
+        if(sidebarAberto){
+            fecharSidebar();
+            sidebarAberto = false;
+        }else{
+            abrirSidebar();
+            sidebarAberto = true;
+        }
+
+
+    })
+
+
+    function fecharSidebar(){
+        //fiz isso pra animação funcionar sem bugar e aparecer o body scrolavel pra direita com porra nenhuma lá
+        sidebar.querySelectorAll(':scope > *').forEach((elem, i)=>{
+            displayElementos[i] = window.getComputedStyle(elem).display;
+            elem.style.display = 'none';
+        });
+        sidebar.style.width = 0;
+        body.style.overflow = 'auto';
+        if(window.innerWidth < 768){
+            username.style.display = '';
+        }
+    }
+    function abrirSidebar(){
+        //fiz isso pra animação funcionar sem bugar e aparecer o body scrolavel pra direita com porra nenhuma lá
+        sidebar.querySelectorAll(':scope > *').forEach((elem, i)=>{
+            elem.style.display = displayElementos[i];
+        });
+        sidebar.style.width = '200px';
+        body.style.overflow = 'hidden';
+        if(window.innerWidth < 768){
+            username.style.display = 'inline';
+
+        }
+        
+    }
+    //odio dessa porra agora q acabei descobri q era só eu mudar o display no único elemento filho e fds, gastei tempo pra carai nisso, agora vai ficar assim, pelo menos se eu adicionar alguma nav ou div a mais funciona
+}
+
+
 function setupDetalhes(){
     let numDestaques = randomPorDia(3, 6, 0); //um número de destques aleatorio de 3 a 6, diferente a cada dia
     let divBtCarousel = document.querySelector('.destaques .carousel-indicators');
@@ -894,11 +949,11 @@ function setupDetalhes(){
             let infoAtual = dados.find((elem)=>elem.id == idAtual);
             //console.log(infoAtual.id);
             divCarouselItems.querySelectorAll('.carousel-item')[i].addEventListener('click',()=>{
-                console.log(infoAtual.id);
+                //console.log(infoAtual.id);
                 window.location.href = `detalhes.html?id=${infoAtual.id}`;
                 
             });
-            console.log(divCarouselItems.querySelectorAll('.carousel-item')[i]);
+            //console.log(divCarouselItems.querySelectorAll('.carousel-item')[i]);
         }
     }
     carregaCliques();
@@ -955,7 +1010,7 @@ function carregaFilmes(){
     }
 
     for(let i = 0; i < dados.length; i++){
-        console.log(document.getElementById(`filme${i}`));
+        //console.log(document.getElementById(`filme${i}`));
         document.getElementById(`filme${i}`).addEventListener('click', ()=>{
             let idDoFilme = ordemFilmes[i];
             console.log(`Entro nessa bagaça`);
@@ -1014,7 +1069,7 @@ function caroulselParaPC(itemsPerView, row){
     const totalItems = items.length;
     
     prevBtn.style.display = 'none';
-    console.log(totalItems);
+    //console.log(totalItems);
 
 
     function updateCarousel() {
@@ -1033,7 +1088,7 @@ function caroulselParaPC(itemsPerView, row){
         }else{
             prevBtn.style.display = 'block';
         }
-        console.log(currentIndex);
+        //console.log(currentIndex);
     }
 
     nextBtn.addEventListener('click', () => {
