@@ -6,7 +6,7 @@ main{
 
 /*formatação da img principal*/
 .imgPrinciapal > img{
-    max-width: 100vw;
+    width: 100vw;
 }
 .imgPrinciapal{
     max-width: 100vw;
@@ -16,7 +16,7 @@ main{
 }
 @media screen and (min-width:768px){
     .imgPrinciapal > img{
-        max-width: 50vw;
+        width: 50vw;
     }
     .imgPrinciapal{
         max-width: 50vw;
@@ -27,7 +27,7 @@ main{
 }
 @media screen and (min-width:1200px){
     .imgPrinciapal > img{
-        max-width: calc(100vw/3);
+        width: calc(100vw/3);
     }
     .imgPrinciapal{
         max-width: calc(100vw/3);

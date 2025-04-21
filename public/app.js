@@ -544,7 +544,7 @@ const dados = [
         "categoria": ["Ação", "Aventura", "Fantasia", "Luta", "Sobrenatural"],
         "diretor": "Sunghoo Park",
         "data": "2020",
-        "trailer": "https://www.youtube.com/watch?v=TVHsknG-1uE",
+        "trailer": "https://www.youtube.com/watch?v=ynr6gnyu9NE",
         "avaliacao": 4.4
       },
       {
@@ -631,8 +631,8 @@ const dados = [
         "categoria": ["Ação", "Drama", "Fantasia", "Mistério", "Suspense"],
         "diretor": "Tetsurō Araki",
         "data": "2013",
-        "trailer": "https://www.youtube.com/watch?v=1pK6Vg5K1wY",
-        "avaliacao": 8.8
+        "trailer": "https://www.youtube.com/watch?v=LV-nazLVmgo",
+        "avaliacao": 4.2
       },
       {
         "id": 17,
@@ -718,8 +718,8 @@ const dados = [
         "categoria": ["Ação", "Aventura", "Fantasia", "Drama", "Sobrenatural"],
         "diretor": "Masato Jinbo",
         "data": "2023",
-        "trailer": "https://www.youtube.com/watch?v=mh5jx3D7S5M",
-        "avaliacao": 4.2
+        "trailer": "https://www.youtube.com/watch?v=eXjbk-4ljgc",
+        "avaliacao": 5
       }
     
 ];
@@ -757,7 +757,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     function coisasDoIndexHTML(){
-        setupDetalhes();
+        setupDestaques();
         carregaFilmes();
         function configCarouselFilmesParaViewPort(){
             btsCarouselPC = document.querySelectorAll('.bts-custom-carousel');
@@ -903,7 +903,7 @@ function setupSidebar(){
 
 
 //funções setup do index.html
-function setupDetalhes(){
+function setupDestaques(){
     let numDestaques = randomPorDia(3, 6, 0); //um número de destques aleatorio de 3 a 6, diferente a cada dia
     let divBtCarousel = document.querySelector('.destaques .carousel-indicators');
     let divCarouselItems = document.querySelector('.destaques .carousel-inner');
@@ -1172,7 +1172,14 @@ function carregaDadosPincipaisDetalhes(){
             categorias.innerHTML += "&nbsp;e&nbsp;";
         }
     })
-
+    avaliacaoNum.innerHTML = '&nbsp;' + infoFilme.avaliacao;
+    if(Number.isInteger(infoFilme.avaliacao)){
+        avaliacaoNum.innerHTML += '.0';
+    }
+    avaliacaoNum.innerHTML += '&nbsp;'
+    spanEstrelas.innerHTML = "";
+    colocarEstrelas(infoFilme.avaliacao, spanEstrelas);
+    iframeTrailer.src = converterYTWatchParaEmbed(infoFilme.trailer);
     
     
     
@@ -1181,6 +1188,7 @@ function carregaDadosPincipaisDetalhes(){
     
     
 }
+
 
 
 
@@ -1197,6 +1205,39 @@ function fecharDropdown(dropdown) {
 function trocarComponente1por2(comp1, comp2) {
     comp1.style.display = 'none';
     comp2.style.display = 'inline';
+}
+
+function colocarEstrelas(numAvaliacao, container){
+    if(numAvaliacao>5){
+        console.log(`Erro número ${numAvaliacao} de avaliação maior que 5`);
+        return;
+    }
+    let numDeEstrelasFill = Math.floor(numAvaliacao);
+    for(let i = 0; i < numDeEstrelasFill; i++){
+        container.innerHTML += `<i class="bi bi-star-fill"></i>`;
+    }
+    let numDeEstrelasVazias;
+    if(!Number.isInteger(numAvaliacao)){
+        container.innerHTML += `<i class="bi bi-star-half"></i>`;
+        numDeEstrelasVazias = 5 - (numDeEstrelasFill + 1);
+    }else{
+        numDeEstrelasVazias = 5 - numDeEstrelasFill;
+    }
+    for(let i = 0; i < numDeEstrelasVazias; i++){
+        container.innerHTML += `<i class="bi bi-star"></i>`;
+    }
+}
+function converterYTWatchParaEmbed(link){
+    try{
+        const URLwatch = new URL(link);
+        const videoId = URLwatch.searchParams.get("v");
+        return `https://www.youtube.com/embed/${videoId}`;
+    }catch(e){
+        console.log('Link Invalido')
+        console.log(`Erro: ${e}`);
+        return null;
+    }
+    
 }
 
 
