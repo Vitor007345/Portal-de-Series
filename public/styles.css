@@ -349,9 +349,7 @@ footer .row{
 
 
 /*Formatação da sidebar*/
-.sidebar *{
-    /*display:none;*/
-}
+
 .sidebar{
     display: block;
     width:200px;
