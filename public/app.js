@@ -724,12 +724,17 @@ const dados = [
     
 ];
 
+const frases = [
+    "Recomendados",
+    "Populares",
+];
+
 
 
 
 let logged = true;
 
-
+//código geral
 document.addEventListener('DOMContentLoaded', () => {
     let divDeslogado = document.querySelector('div.not-logged');
     let divLogado = document.querySelector('div.logged');
@@ -758,26 +763,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function coisasDoIndexHTML(){
         setupDestaques();
-        carregaFilmes();
-        function configCarouselFilmesParaViewPort(){
-            btsCarouselPC = document.querySelectorAll('.bts-custom-carousel');
-            if(window.innerWidth >= 768){
-                btsCarouselPC.forEach((bt)=>{
-                    bt.style.display = 'block';
-                });
-                if(window.innerWidth >= 992){
-                    caroulselParaPC(6, 1);
-                    caroulselParaPC(6, 2);
-                }else{
-                    caroulselParaPC(3, 1);
-                    caroulselParaPC(3, 2);
-                }
-            }else{
-                btsCarouselPC.forEach((bt)=>{
-                    bt.style.display = 'none';
-                });
-            }
-        }
+        carregaFilmes(); 
         configCarouselFilmesParaViewPort();
         window.addEventListener('resize', ()=>{
             configCarouselFilmesParaViewPort();
@@ -856,11 +842,13 @@ function setupSidebar(){
     let username = document.getElementById('username');
     let sidebar = document.getElementById('sidebar-menu');
     let body = document.querySelector('body');
-    let sidebarAberto = false;
     let displayElementos = [];
+    //fecha a sidebar, pois a sidebar deve começar fechada
+    let sidebarAberto = false;
     fecharSidebar();
     //console.log(displayElementos);
     
+    //abre e fecha a sidebar de acordo com o clique
     imgPerfil.addEventListener('click', ()=>{
         if(sidebarAberto){
             fecharSidebar();
@@ -875,31 +863,30 @@ function setupSidebar(){
 
 
     function fecharSidebar(){
-        //fiz isso pra animação funcionar sem bugar e aparecer o body scrolavel pra direita com porra nenhuma lá
-        sidebar.querySelectorAll(':scope > *').forEach((elem, i)=>{
-            displayElementos[i] = window.getComputedStyle(elem).display;
-            elem.style.display = 'none';
+        //fiz isso pra animação funcionar sem bugar e aparecer o body scrolavel pra direita com porra nenhuma lá qnd a sidebar fechava
+        sidebar.querySelectorAll(':scope > *').forEach((elem, i)=>{ //seleciona todos os elementos filhos
+            displayElementos[i] = window.getComputedStyle(elem).display; //salva o display deles em um array
+            elem.style.display = 'none'; //desaparece com os elementos
         });
         sidebar.style.width = 0;
-        body.style.overflow = 'auto';
-        if(window.innerWidth < 768){
+        body.style.overflow = 'auto'; //destrava o scroll do body
+        if(window.innerWidth < 768){ //no caso do celular, volta o username pro display antigo ao fechar, no caso o none
             username.style.display = '';
         }
     }
     function abrirSidebar(){
-        //fiz isso pra animação funcionar sem bugar e aparecer o body scrolavel pra direita com porra nenhuma lá
-        sidebar.querySelectorAll(':scope > *').forEach((elem, i)=>{
-            elem.style.display = displayElementos[i];
+        //fiz isso pra animação funcionar sem bugar e aparecer o body scrolavel pra direita com porra nenhuma lá qnd a sidebar fechava
+        sidebar.querySelectorAll(':scope > *').forEach((elem, i)=>{ //seleciona todos os elementos filhos
+            elem.style.display = displayElementos[i]; //volta com o display antigo para ele reaparecer
         });
         sidebar.style.width = '200px';
-        body.style.overflow = 'hidden';
-        if(window.innerWidth < 768){
+        body.style.overflow = 'hidden'; //trava o scroll do body
+        if(window.innerWidth < 768){ //faz o username voltar pq na viewport menor q 768 ele fica invisivel
             username.style.display = 'inline';
 
         }
         
     }
-    //odio dessa porra agora q acabei descobri q era só eu mudar o display no único elemento filho e fds, gastei tempo pra carai nisso, agora vai ficar assim, pelo menos se eu adicionar alguma nav ou div a mais funciona
 }
 
 
@@ -909,6 +896,7 @@ function setupDestaques(){
     let divBtCarousel = document.querySelector('.destaques .carousel-indicators');
     let divCarouselItems = document.querySelector('.destaques .carousel-inner');
     let sequenciaDetalhes = randomSequencePorDia(1, dados.length, 1).slice(0, numDestaques); //cria uma sequencia com numero de destaques como tamanho, podendo ter número de 1 ao max dos dados, ela é diferente a cada dia
+
 
     //seta o primeiro botão e slide como active
 
@@ -966,81 +954,75 @@ function setupDestaques(){
 
 
     
-    function carregaCliques(){
+    function carregaCliquesDestaques(){
         for(let i = 0; i < numDestaques; i++){
-            let idAtual = sequenciaDetalhes[i];
-            //console.log(idAtual);
-            let infoAtual = dados.find((elem)=>elem.id == idAtual);
-            //console.log(infoAtual.id);
+            let idAtual = sequenciaDetalhes[i]; //console.log(idAtual);
+            let infoAtual = dados.find((elem)=>elem.id == idAtual); //console.log(infoAtual);
             divCarouselItems.querySelectorAll('.carousel-item')[i].addEventListener('click',()=>{
-                //console.log(infoAtual.id);
                 window.location.href = `detalhes.html?id=${infoAtual.id}`;
-                
-            });
-            //console.log(divCarouselItems.querySelectorAll('.carousel-item')[i]);
+            }); //console.log(divCarouselItems.querySelectorAll('.carousel-item')[i]);
         }
     }
-    carregaCliques();
+    carregaCliquesDestaques();
     
     
 }
 
 function carregaFilmes(){
-    const frases = [
-        "Recomendados",
-        "Populares",
-    ];
-    const numDeRows = frases.length;
-    let numPorRow = dados.length / numDeRows;
-    if(numPorRow < 6){
+    const numDeRows = frases.length; //seta o número de linhas de filmes correspondente ao número de frase
+    let numPorRow = dados.length / numDeRows; //calcula o número médio de filmes por linha
+    if(numPorRow < 6){ //6 é o número mínimo por linha pra n ficar feio
         console.log('Banco de dados pequeno demais para o número de frases');
         console.log('Aumente o banco de dados ou diminua o número de frases');
         alert('Erro no carregamento dos filme');
         return;
     }
+    //coloca o resto da divisão caso não seja inteira na primemira linha
     let numPrimeiraRow = numPorRow;
     if(!Number.isInteger(numPorRow)){
         numPorRow = Math.floor(numPorRow);
         numPrimeiraRow = numPorRow + (dados.length % numDeRows);
     }
 
-    let ordemFilmes = randomSequencePorDia(1, dados.length, 7);
+    let ordemFilmes = randomSequencePorDia(1, dados.length, 7); //ordem dos filmes aléatoria por dia
 
     let sFilmes = document.getElementById('sectionFilmes');
-    sFilmes.innerHTML = "";
-    let c = 0;
-    for(let i = 1; i <= numDeRows; i++){
-        newFrase(frases[i-1], sFilmes, i)
-        if(i === 1){
-            for(; c < numPrimeiraRow; c++){
-                
+    sFilmes.innerHTML = ""; //antes de botar os trem limpa oq tinha antes antes
+    let c = 0; //contador de filmes
+    for(let i = 1; i <= numDeRows; i++){ //percorre o número de linhas
+        newFrase(frases[i-1], sFilmes, i) //adiciona uma nova frase a cada linha
+        if(i === 1){ //se for a primeira linha deve adicionar o numero geral por linha + o resto q equivale a o valor da variavel numPrimeiraRow
+            for(; c < numPrimeiraRow; c++){ //repete o número de filmes da primeira linha vezes
                 carregaOFilme(c, ordemFilmes, sFilmes, i);
             }
-            sFilmes.querySelector(`#row${i}`).innerHTML += `
-                <button id="prev${i}" class="btn btn-dark prev position-absolute  top-50 bts-custom-carousel"><span class="carousel-control-prev-icon" aria-hidden="true"></span></button>
-                <button id="next${i}" class="btn btn-dark next position-absolute  top-50 bts-custom-carousel"><span class="carousel-control-next-icon" aria-hidden="true"></span></button>
-
-            `;
-        }else{
-            for(let j = 0; j < numPorRow; c++, j++){
+            criaBotoesCarousel(i);
+        }else{ //se não vai normal
+            for(let j = 0; j < numPorRow; c++, j++){ //repete o número de filmes por linha vezes
                 carregaOFilme(c, ordemFilmes, sFilmes, i);
             }
-            sFilmes.querySelector(`#row${i}`).innerHTML += `
-                <button id="prev${i}" class="btn btn-dark prev position-absolute  top-50 bts-custom-carousel"><span class="carousel-control-prev-icon" aria-hidden="true"></span></button>
-                <button id="next${i}" class="btn btn-dark next position-absolute  top-50 bts-custom-carousel"><span class="carousel-control-next-icon" aria-hidden="true"></span></button>
-
-            `;
+            criaBotoesCarousel(i);
         }
     }
+    function criaBotoesCarousel(i){
+        sFilmes.querySelector(`#row${i}`).innerHTML += `
+            <button id="prev${i}" class="btn btn-dark prev position-absolute  top-50 bts-custom-carousel"><span class="carousel-control-prev-icon" aria-hidden="true"></span></button>
+            <button id="next${i}" class="btn btn-dark next position-absolute  top-50 bts-custom-carousel"><span class="carousel-control-next-icon" aria-hidden="true"></span></button>
 
-    for(let i = 0; i < dados.length; i++){
-        //console.log(document.getElementById(`filme${i}`));
-        document.getElementById(`filme${i}`).addEventListener('click', ()=>{
-            let idDoFilme = ordemFilmes[i];
-            console.log(`Entro nessa bagaça`);
-            window.location.href = `detalhes.html?id=${idDoFilme}`;
-        });
+         `;
     }
+
+    function carregaCliquesFilmes(){
+        for(let i = 0; i < dados.length; i++){
+            //console.log(document.getElementById(`filme${i}`));
+            document.getElementById(`filme${i}`).addEventListener('click', ()=>{
+                let idDoFilme = ordemFilmes[i];
+                console.log(`Entro nessa bagaça`);
+                window.location.href = `detalhes.html?id=${idDoFilme}`;
+            });
+        }
+    }
+    carregaCliquesFilmes();
+    
 
 }
 function newFrase(frase, sFilmes, row){
@@ -1076,35 +1058,30 @@ function carregaOFilme(i, ordem, sFilmes, row){
         </div>
 
     `;
-
-
-
-
 }
 
 function caroulselParaPC(itemsPerView, row){
     const track = document.getElementById(`row${row}`);
     const items = document.querySelectorAll(`#row${row} > .filme`);
-    const nextBtn = document.getElementById(`next${row}`)
-    const prevBtn = document.getElementById(`prev${row}`)
-    //console.log(items);
-    //console.log(itemsPerView)
-    let currentIndex = 0;
+    const nextBtn = document.getElementById(`next${row}`);
+    const prevBtn = document.getElementById(`prev${row}`);
+   
+    let currentIndex = 0; //inicia a posição do carousel como 0
     const totalItems = items.length;
     
-    prevBtn.style.display = 'none';
-    //console.log(totalItems);
+    prevBtn.style.display = 'none'; //bt prev começa invisivel pq no index 0 n existe prev, pq n tem filme antes
+    
 
 
     function updateCarousel(resize = false) {
-        const itemWidth = items[0].offsetWidth;
-        const tempo = 250;
-        if(resize){
+        const itemWidth = items[0].offsetWidth; //pega o width dos itens, no caso pega só do primeiro, mas como todos tem o msm tanto faz
+        const tempo = 250; //tempo da animação
+        if(resize){ //se o update for por cause de um resize no tamanho da tela faz sem animação, se não com animação
             track.scrollLeft = currentIndex * itemWidth;
         }else{
             scrollAnimadoEase(track, track.scrollLeft, currentIndex * itemWidth, tempo, 2000);
         }
-        setTimeout(()=>{
+        setTimeout(()=>{ //bts só atualizão após o fim da animação
             prevBtn.style.left = `${currentIndex * itemWidth}px`;
             nextBtn.style.right = `-${currentIndex * itemWidth}px`;
         },tempo);
@@ -1113,46 +1090,67 @@ function caroulselParaPC(itemsPerView, row){
         if((currentIndex + itemsPerView) === totalItems){
             nextBtn.style.display = 'none';
         }else{
-            setTimeout(()=>{nextBtn.style.display = 'block';},tempo);
+            setTimeout(()=>{nextBtn.style.display = 'block';},tempo); //bts só voltam a aparecer após o fim da animação
         }
         if(currentIndex === 0){
             prevBtn.style.display = 'none';
         }else{
-            setTimeout(()=>{prevBtn.style.display = 'block';},tempo);
+            setTimeout(()=>{prevBtn.style.display = 'block';},tempo); //bts só voltam a aparecer após o fim da animação
         }
         //console.log(currentIndex);
     }
 
     nextBtn.addEventListener('click', () => {
-        if (currentIndex < totalItems - itemsPerView) {
-            currentIndex += itemsPerView;
-            if(currentIndex > (totalItems - itemsPerView)){
+        if (currentIndex < totalItems - itemsPerView) { //Apenas scrola se o index n estiver no max scrolavel
+            currentIndex += itemsPerView; //passa todos os itens a vista para esquerda e aparece todos novos que vem da direita
+            if(currentIndex > (totalItems - itemsPerView)){ //se Index for maior q o suficiente e ultrapassar o max pra n bugar ele volta pro max
                 currentIndex = totalItems - itemsPerView;
             }
         
-            updateCarousel();
+            updateCarousel(); //aqui faz o update dps de definir qual prox index
         }
     });
 
     prevBtn.addEventListener('click', () => {
-        if (currentIndex > 0) {
-            if((currentIndex - itemsPerView) >= 0){
+        if (currentIndex > 0) { //Apenas scrola se o index n estiver no max scrolavel
+            if((currentIndex - itemsPerView) >= 0){  //se for possível subitrair o index e ele n descer pra abixo de 0 faça isso
                 currentIndex-=itemsPerView;
-            }else{
+            }else{ //se não, se ultrapassar, só vai até o 0 msm
                 currentIndex = 0;
             }
-            updateCarousel();
+            updateCarousel(); //aqui faz o update dps de definir qual prox index
         }
     });
 
     window.addEventListener('resize', ()=>{
-        if(window.innerWidth >= 768){
-            updateCarousel(true);
+        if(window.innerWidth >= 768){ //abaixo de 768 n tem o carousel ent n prescisa atualizar
+            updateCarousel(true); //atualiza sempre q muda o tamanho pq as vezes sai da posição e buga
         }
     })
 
 }
-
+function configCarouselFilmesParaViewPort(){ 
+    //essa função basicamente faz os botão aparecer acima de 768px e sumir abaixo de 768px e seta o número de filmes que ficam na tela no carousel dependendo da viewport
+    let btsCarouselPC = document.querySelectorAll('.bts-custom-carousel');
+    if(window.innerWidth >= 768){
+        btsCarouselPC.forEach((bt)=>{
+            bt.style.display = 'block';
+        });
+        if(window.innerWidth >= 992){
+            for(let i = 1; i <= frases.length; i++){
+                caroulselParaPC(6, i);
+            }
+        }else{
+            for(let i = 1; i <= frases.length; i++){
+                caroulselParaPC(3, i);
+            }
+        }
+    }else{
+        btsCarouselPC.forEach((bt)=>{
+            bt.style.display = 'none';
+        });
+    }
+}
 //funções setup do detalhes
 
 function getDadosLocais(){
@@ -1348,7 +1346,6 @@ function randomSequencePorDia(min, max, index){
 
 function scrollAnimadoEase(elem, posInicial, posFinal, tempo = 500, passos = 100){
     let deslocamento = posFinal - posInicial;
-    //let incremento = deslocamento/passos;
     for(let i = 0; i <= passos; i++){
         setTimeout(()=>{
             elem.scrollLeft = posInicial + (ease(i)*deslocamento);
