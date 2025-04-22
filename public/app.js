@@ -765,7 +765,10 @@ document.addEventListener('DOMContentLoaded', () => {
         setupDestaques();
         carregaFilmes(); 
         configCarouselFilmesParaViewPort();
-        window.addEventListener('resize', ()=>{
+        window.matchMedia('(min-width: 768px)').addEventListener('change', ()=>{
+            configCarouselFilmesParaViewPort();
+        });
+        window.matchMedia('(min-width: 992px)').addEventListener('change', ()=>{
             configCarouselFilmesParaViewPort();
         });
     }
@@ -1073,10 +1076,10 @@ function caroulselParaPC(itemsPerView, row){
     
 
 
-    function updateCarousel(resize = false) {
+    function updateCarousel(noAnimation = false) {
         const itemWidth = items[0].offsetWidth; //pega o width dos itens, no caso pega só do primeiro, mas como todos tem o msm tanto faz
         const tempo = 250; //tempo da animação
-        if(resize){ //se o update for por cause de um resize no tamanho da tela faz sem animação, se não com animação
+        if(noAnimation){ //se o update for por cause de um resize no tamanho da tela faz sem animação, se não com animação
             track.scrollLeft = currentIndex * itemWidth;
         }else{
             scrollAnimadoEase(track, track.scrollLeft, currentIndex * itemWidth, tempo, 2000);
@@ -1099,8 +1102,9 @@ function caroulselParaPC(itemsPerView, row){
         }
         //console.log(currentIndex);
     }
+    updateCarousel(true);
 
-    nextBtn.addEventListener('click', () => {
+    nextBtn.onclick = () => {
         if (currentIndex < totalItems - itemsPerView) { //Apenas scrola se o index n estiver no max scrolavel
             currentIndex += itemsPerView; //passa todos os itens a vista para esquerda e aparece todos novos que vem da direita
             if(currentIndex > (totalItems - itemsPerView)){ //se Index for maior q o suficiente e ultrapassar o max pra n bugar ele volta pro max
@@ -1109,9 +1113,9 @@ function caroulselParaPC(itemsPerView, row){
         
             updateCarousel(); //aqui faz o update dps de definir qual prox index
         }
-    });
+    };
 
-    prevBtn.addEventListener('click', () => {
+    prevBtn.onclick = () => {
         if (currentIndex > 0) { //Apenas scrola se o index n estiver no max scrolavel
             if((currentIndex - itemsPerView) >= 0){  //se for possível subitrair o index e ele n descer pra abixo de 0 faça isso
                 currentIndex-=itemsPerView;
@@ -1120,13 +1124,18 @@ function caroulselParaPC(itemsPerView, row){
             }
             updateCarousel(); //aqui faz o update dps de definir qual prox index
         }
-    });
-
-    window.addEventListener('resize', ()=>{
+    };
+    
+    window.onresize = ()=>{
         if(window.innerWidth >= 768){ //abaixo de 768 n tem o carousel ent n prescisa atualizar
             updateCarousel(true); //atualiza sempre q muda o tamanho pq as vezes sai da posição e buga
+        }else{
+            let btsCarouselPC = document.querySelectorAll('.bts-custom-carousel');
+            btsCarouselPC.forEach((bt)=>{
+                bt.style.display = 'none';
+            });
         }
-    })
+    };
 
 }
 function configCarouselFilmesParaViewPort(){ 
