@@ -67,17 +67,17 @@ const dados = [
         "imgsComplementares": [
             {
                 "id": 1,
-                "src": "imgs/filmes/interestelar/interstellarImg1",
+                "src": "imgs/filmes/interestelar/interstellarImg1.jpg",
                 "descricao": "Nesta cena, o protagonista Cooper (interpretado por Matthew McConaughey) explora a superfície de um planeta desconhecido. A imagem transmite a sensação de solidão e a vastidão do espaço, elementos centrais da narrativa do filme.​"
             },
             {
                 "id": 2,
-                "src": "imgs/filmes/interestelar/interstellarImg2",
+                "src": "imgs/filmes/interestelar/interstellarImg2.jpg",
                 "descricao": "Esta imagem mostra o buraco negro Gargantua, um dos elementos mais impressionantes do filme. A representação visual do buraco negro, com seu disco de acreção luminoso, é uma das cenas mais icônicas e visualmente deslumbrantes de Interestelar.​"
             },
             {
                 "id": 3,
-                "src": "imgs/filmes/interestelar/interstellarImg3",
+                "src": "imgs/filmes/interestelar/interstellarImg3.jpg",
                 "descricao": "Aqui, vemos a equipe da missão Endurance, composta por astronautas que viajam através de um buraco de minhoca em busca de um novo lar para a humanidade. A imagem destaca os trajes espaciais e o ambiente futurista da nave."
             }
         ],
@@ -298,7 +298,7 @@ const dados = [
         "categoria": ["Drama", "História"],
         "diretor": "Christopher Nolan",
         "data": "2023-07-20",
-        "trailer": "https://www.youtube.com/watch?v=1yZ_4PssQ7I",
+        "trailer": "https://www.youtube.com/watch?v=F3OxA9Cz17A",
         "avaliacao": 4.7
     },
     {
