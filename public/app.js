@@ -776,11 +776,18 @@ document.addEventListener('DOMContentLoaded', () => {
         carregaDadosPincipaisDetalhes();
         carregaEpsOuFotos();
     }
-    
-    
-    
 
-})
+});
+//Fim-código geral
+
+
+
+
+//Funções
+
+
+
+//Funções setup
 
 
 //funções setup gerais
@@ -891,6 +898,7 @@ function setupSidebar(){
         
     }
 }
+//Fim-funções setup gerais
 
 
 //funções setup do index.html
@@ -970,7 +978,6 @@ function setupDestaques(){
     
     
 }
-
 function carregaFilmes(){
     const numDeRows = frases.length; //seta o número de linhas de filmes correspondente ao número de frase
     let numPorRow = dados.length / numDeRows; //calcula o número médio de filmes por linha
@@ -1062,7 +1069,6 @@ function carregaOFilme(i, ordem, sFilmes, row){
 
     `;
 }
-
 function caroulselParaPC(itemsPerView, row){
     const track = document.getElementById(`row${row}`);
     const items = document.querySelectorAll(`#row${row} > .filme`);
@@ -1160,18 +1166,20 @@ function configCarouselFilmesParaViewPort(){
         });
     }
 }
-//funções setup do detalhes
+//Fim-funções setup do index.html
 
+
+//funções setup do detalhes
 function getDadosLocais(){
     let params = new URLSearchParams(window.location.search);
     let id = params.get('id'); //console.log(id);
     return dados.find((elem)=>elem.id == id);
 }
-
 function carregaDadosPincipaisDetalhes(){
 
     let infoFilme = getDadosLocais();
     
+    //declara todos os elementos que serão alterados dinamicamente
     let banner = document.getElementById('banner'); //console.log(banner);
     let titulo = document.getElementById('titulo'); //console.log(titulo);
     let sinopse = document.getElementById('sinopse'); //console.log(sinopse);
@@ -1180,11 +1188,12 @@ function carregaDadosPincipaisDetalhes(){
     let spanEstrelas = document.getElementById('estrelasIcons'); //console.log(spanEstrelas);
     let iframeTrailer = document.getElementById('iframeTrailer'); //console.log(iframeTrailer);
 
+    //altera os elementos de acordo com os dados
     banner.src = infoFilme.imgPrinciapl;
-    titulo.innerText = (!infoFilme.subtitulo)? infoFilme.titulo: infoFilme.titulo + " " + infoFilme.subtitulo;
+    titulo.innerText = (!infoFilme.subtitulo)? infoFilme.titulo: infoFilme.titulo + " " + infoFilme.subtitulo; //adiciona somente o titulo se subtitulo n existir, se existir adiciola o titulo e o subtitulo
     sinopse.innerText = infoFilme.sinopseGrande;
     categorias.innerHTML = "";
-    infoFilme.categoria.forEach((elem, i, categoria)=>{
+    infoFilme.categoria.forEach((elem, i, categoria)=>{ //faz com q o array de categorias se torne uma frase com as categorias entre virgulas e entre a ultima e a primeira ao inves da virgula um e
         categorias.innerHTML += elem;
         if(i<(categoria.length - 2)){
             categorias.innerHTML += ",&nbsp;";
@@ -1193,13 +1202,13 @@ function carregaDadosPincipaisDetalhes(){
         }
     })
     avaliacaoNum.innerHTML = '&nbsp;' + infoFilme.avaliacao;
-    if(Number.isInteger(infoFilme.avaliacao)){
+    if(Number.isInteger(infoFilme.avaliacao)){ //caso sejá inteiro o número ira aparecer só assim 5 ou assim 4, ai pra ficar melhor se for inteiro ele adiciona um .0
         avaliacaoNum.innerHTML += '.0';
     }
     avaliacaoNum.innerHTML += '&nbsp;'
     spanEstrelas.innerHTML = "";
     colocarEstrelas(infoFilme.avaliacao, spanEstrelas);
-    iframeTrailer.src = converterYTWatchParaEmbed(infoFilme.trailer);
+    iframeTrailer.src = converterYTWatchParaEmbed(infoFilme.trailer); //forma embed do link é a forma de links do YT para iframes
     
     
     
@@ -1210,12 +1219,12 @@ function carregaDadosPincipaisDetalhes(){
 }
 function carregaEpsOuFotos(){
     let infoFilme = getDadosLocais();
-    let h3epsOuCenas = document.getElementById('h3epsOuCenas');  console.log(h3epsOuCenas);
-    let divEpsOuCenas = document.getElementById('fotosDoItem');
-    divEpsOuCenas.innerHTML = "";
+    let h3epsOuCenas = document.getElementById('h3epsOuCenas');  //console.log(h3epsOuCenas); //h3 do título
+    let divEpsOuCenas = document.getElementById('fotosDoItem'); //console.log(divEpsOuCenas); //div onde ficam os cards
+    divEpsOuCenas.innerHTML = ""; //limpa a div onde vão ficar os cards antes de fazer a estruturação dinamica
     if(infoFilme.class === "filme"){
-        h3epsOuCenas.innerText = "Cenas Marcantes";
-        infoFilme.imgsComplementares.forEach((cena)=>{
+        h3epsOuCenas.innerText = "Cenas Marcantes"; //seta o titilo referente a filmes caso seja um filme
+        infoFilme.imgsComplementares.forEach((cena)=>{ //loop q coloca todas os cards
             divEpsOuCenas.innerHTML += `
                 <div class="card" style="width: 18rem;">
                     <img class="card-img-top" src="${cena.src}" alt="Card image cap">
@@ -1229,8 +1238,8 @@ function carregaEpsOuFotos(){
             elem.style.flex = '1 1 18rem';
         });
     }else if(infoFilme.class === "serie"){
-        h3epsOuCenas.innerText = "Episódios";
-        infoFilme.episodios.forEach((ep)=>{
+        h3epsOuCenas.innerText = "Episódios"; //seta o titilo referente a serie caso seja uma serie
+        infoFilme.episodios.forEach((ep)=>{ //loop q coloca todas os cards
             divEpsOuCenas.innerHTML += `
                 <div class="card" style="width: 18rem;">
                     <img class="card-img-top" src="${ep.src}" alt="Card image cap">
@@ -1247,12 +1256,13 @@ function carregaEpsOuFotos(){
     }
         
 }
+//Fim-funções setup do detalhes
 
 
+//Fim-Funções setup
 
 
-
-//funções reutilizaveis
+//funções gerais //Obs: acabei não usando todas, mas vou deixar ai q se eu ou algm q for mexer no meu código precisar no futura já tem e n precisa fazer dnv
 function abrirDropdown(dropdown) {
 
     dropdown.style.display = 'inline';
@@ -1265,6 +1275,7 @@ function trocarComponente1por2(comp1, comp2) {
     comp1.style.display = 'none';
     comp2.style.display = 'inline';
 }
+
 
 function colocarEstrelas(numAvaliacao, container){
     if(numAvaliacao>5){
@@ -1336,7 +1347,6 @@ function randomPorDia(min, max, index){
     let rand = Math.abs(Math.sin(seed)); //quase aleatorio de -1 a 1, valores possíveis em um seno, função seno retorna valores caóticos
     return Math.floor(rand * (max-min+1)) + min;
 }
-
 function randomSequencePorDia(min, max, index){
     let sequencia = new Array(max-min + 1).fill(null);
     let numbersToMix = new Array(sequencia.length);
@@ -1352,7 +1362,6 @@ function randomSequencePorDia(min, max, index){
     }
     return sequencia;
 }
-
 function scrollAnimadoEase(elem, posInicial, posFinal, tempo = 500, passos = 100){
     let deslocamento = posFinal - posInicial;
     for(let i = 0; i <= passos; i++){
@@ -1368,4 +1377,8 @@ function scrollAnimadoEase(elem, posInicial, posFinal, tempo = 500, passos = 100
     }
 
 }
+//Fim-funções gerais
 
+
+
+//Fim-Funções
