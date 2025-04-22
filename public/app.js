@@ -763,6 +763,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function coisasDoIndexHTML(){
         setupDestaques();
+        configAutoplayDestaques();
         carregaFilmes(); 
         configCarouselFilmesParaViewPort();
         window.matchMedia('(min-width: 768px)').addEventListener('change', ()=>{
@@ -977,6 +978,22 @@ function setupDestaques(){
     carregaCliquesDestaques();
     
     
+}
+function configAutoplayDestaques(){
+    const divCarouselDestaques = document.getElementById('carouselExampleCaptions');
+    const carousel = bootstrap.Carousel.getOrCreateInstance(divCarouselDestaques);
+
+    //Pausar autoplay qnd o mouse passar pelo elemento
+    divCarouselDestaques.addEventListener('mouseenter', () => {
+        carousel.pause();  //Pausa o autoplay
+    });
+
+    
+
+    //Despausar o autoplay qnd o mouse sair
+    divCarouselDestaques.addEventListener('mouseleave', () => {
+        carousel.cycle();  //Volta o autoplay
+    });
 }
 function carregaFilmes(){
     const numDeRows = frases.length; //seta o número de linhas de filmes correspondente ao número de frase
